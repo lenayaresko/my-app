@@ -2,9 +2,9 @@
     margin: 0;
     padding: 0;
   }
-  .body {
+  /* .body {
     box-sizing: border-box;
-  }
+  } */
   .content {
     background-color: #004980;
     min-height: 100vh;
@@ -51,7 +51,12 @@
     align-items: center;
     justify-content: center;
     border-radius: 12px;
-
+    cursor: pointer;
+  }
+  .chosenLevel {
+    border: 3px solid #004980;
+    width: 93px;
+    height: 94px;
   }
 .choose-level-button {
     width: 246px;
