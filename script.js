@@ -4,10 +4,8 @@ const chooseLevelbutton = document.querySelector('.choose-level-button');
 
 let chosenLevelNumber;
 
-
 chooseLevelParent.addEventListener('click', function (event) {
     console.log(event.target);
-
 });
 
 // chooseLevelStage.forEach(element => {
