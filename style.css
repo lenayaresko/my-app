@@ -2,9 +2,37 @@
     margin: 0;
     padding: 0;
   }
-  /* .body {
+  .body {
     box-sizing: border-box;
-  } */
+  }
+  .hidden {
+    display: none;
+  }
+  .content-screen-2 {
+    display: none;
+    background-color: #004980;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .text {
+    font-family: 'StratosSkyeng';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 26px;
+    line-height: 28px;
+    text-align: center;
+  }
+  .your-level {
+    font-family: 'StratosSkyeng';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 26px;
+    line-height: 28px;
+    text-align: center;
+  }
   .content {
     background-color: #004980;
     min-height: 100vh;
