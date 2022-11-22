@@ -13,10 +13,14 @@
         "prettier/prettier": [
             "error",
             {
-                "endOfLine": "auto"
+                "endOfLine": "auto",
+                "singleQuote": true,
+                "semi": true,
+                "no-unused-vars": ["error", { "caughtErrors": "none" }]
             }
         ],
         "camelcase": ["error"],
-        "eqeqeq": ["error", "always"]
+        "eqeqeq": ["error", "always"],
+        "quotes": [2, "single", { "avoidEscape": true }]
     }
 }
