@@ -7,42 +7,16 @@
     padding: 0;
 }
 
+.center {
+    padding-left: calc(50% - 600px);
+    padding-right: calc(50% - 600px);
+}
+
 .body {
     box-sizing: border-box;
 }
 
-.hidden {
-    display: none;
-}
-
-.content-screen-2 {
-    background-color: #004980;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-}
-
-.text {
-    font-family: 'StratosSkyeng';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 26px;
-    line-height: 28px;
-    text-align: center;
-}
-
-.your-level {
-    font-family: 'StratosSkyeng';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 26px;
-    line-height: 28px;
-    text-align: center;
-}
-
-.content {
+.content-screen-1 {
     background-color: #004980;
     min-height: 100vh;
     display: flex;
@@ -95,19 +69,6 @@
     cursor: pointer;
 }
 
-.chosen-level {
-    border: 3px solid #004980;
-    width: 93px;
-    height: 94px;
-}
-
-.chosen-level-number {
-    font-family: 'StratosSkyeng';
-    color: #004980;
-    font-weight: 400;
-    font-size: 34px;
-}
-
 .choose-level-button {
     width: 246px;
     height: 50px;
@@ -123,32 +84,86 @@
     cursor: pointer;
 }
 
-.content-game {
-    background-color: #c2f5ff;
+.content-screen-2 {
+    background-color: #004980;
     min-height: 100vh;
+    display: none;
+    flex-direction: column;
+}
+
+.game-info-box {
+    padding-top: 22px;
+    padding-bottom: 35px;
     display: flex;
     align-items: center;
-    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-left: calc(100% - 1500px);
+    padding-right: calc(100% - 1500px);
+}
+
+.info-time-box {
+    display: flex;
     flex-direction: column;
+}
+
+.info-time-min-sec-box {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.text-min {
+    font-family: 'StratosSkyeng';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 32px;
+    color: #fff;
+    padding-right: 57px;
+}
+
+.text-sec {
+    font-family: 'StratosSkyeng';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 32px;
+    color: #fff;
+}
+
+.info-time-tracker {
+    font-family: 'StratosSkyeng';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 64px;
+    line-height: 72px;
+    color: #fff;
+}
+
+.game-start-again-button {
+    width: 246px;
+    height: 48px;
+    background: #7ac100;
+    border-radius: 12px;
+    border: none;
+    color: #fff;
+    font-family: 'StratosSkyeng';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 32px;
+    cursor: pointer;
+}
+
+.game-start-cards {
+    display: flex;
     justify-content: center;
+    gap: 15px;
+    padding-bottom: 15px;
+    cursor: pointer;
 }
 
-.game-title {
-    font-family: 'StratosSkyeng';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 40px;
-    line-height: 48px;
-    text-align: center;
-    color: #004980;
-}
-
-.game-paragraph {
-    font-family: 'StratosSkyeng';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 32px;
-    line-height: 48px;
-    text-align: center;
-    color: #004980;
+.chosen-level {
+    border: 3px solid #004980;
+    width: 93px;
+    height: 94px;
 }
