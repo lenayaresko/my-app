@@ -1,11 +1,23 @@
 function Menu() {
     return (
-    <div className="centerblock__search search">
-    <svg className="search__svg">
-       <use xlinkHref="img/icon/sprite.svg#icon-search" />
-    </svg>
-       <input className="search__text" type="search" placeholder="Поиск" name="search"/>
-    </div>)
+        <nav className="main__nav nav">
+        <div className="nav__logo logo">
+            <img className="logo__image" src="./img/logo.png" alt="logo"/>
+        </div>
+        <div className="nav__burger burger">
+            <span className="burger__line"/>
+            <span className="burger__line"/>
+            <span className="burger__line"/>
+        </div>
+        <div className="nav__menu menu">
+            <ul className="menu__list">
+                <li className="menu__item"><a href="http://" className="menu__link">Главное</a></li>
+                <li className="menu__item"><a href="http://" className="menu__link">Мой плейлист</a></li>
+                <li className="menu__item"><a href="http://" className="menu__link">Войти</a></li>
+            </ul>
+        </div>
+    </nav>
+    )
     }
     
     export default Menu;
