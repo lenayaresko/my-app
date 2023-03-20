@@ -1,8 +1,8 @@
-import { useState } from 'react'
-
-const [isVisible, setVisible] = useState(false);
+import { useState } from 'react';
 
 function Menu() {
+
+    const [isVisible, setVisible] = useState(false);
     return (
         <nav className="main__nav nav">
         <div className="nav__logo logo">
