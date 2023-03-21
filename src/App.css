@@ -44,7 +44,7 @@ body {
   width: 100%;
   min-height: 100%;
   overflow: hidden;
-  background-color: #383838;
+  background-color: #181818;
 }
 
 .container {
@@ -59,6 +59,23 @@ body {
   border-color: #D9B6FF;
   color: #D9B6FF;
   cursor: pointer;
+}
+
+._btn-text-active {
+  border-color: #B672FF;
+  color: #B672FF;
+  cursor: pointer;
+  border: 1px solid #B672FF;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  border-radius: 60px;
+  padding: 6px 20px;
+}
+
+._btn-text-active:not(:last-child) {
+  margin-right: 10px;
 }
 
 ._btn-icon:hover svg {
@@ -105,6 +122,7 @@ body {
 }
 
 .main__centerblock {
+  padding-bottom: 80px;
   width: auto;
   -webkit-box-flex: 3;
       -ms-flex-positive: 3;
@@ -127,6 +145,7 @@ body {
 }
 
 .nav__burger {
+  cursor: pointer;
   width: 20px;
   height: 36px;
   padding: 13px 0;
@@ -351,8 +370,21 @@ body {
 }
 
 
+.col01 {
+  width: 220px;
+}
+
+.col02 {
+  width: 291px;
+}
+
+.col03 {
+  width: 195px;
+}
+
 .col04 {
-  text-align: end;
+  width: 60px;
+  text-align: start;
 }
 
 .playlist__item {
@@ -858,4 +890,42 @@ body {
 
 .hidden {
   display: none;
+}
+
+.modal_window_artist {
+  width: 248px;
+  background-color: #313131;
+  height: 305px;
+  border-radius: 12px;
+  position: absolute;
+  left: 330px;
+    top: 258px;
+}
+
+.modal_window_year {
+  width: 248px;
+  background-color: #313131;
+  height: 305px;
+  border-radius: 12px;
+  position: absolute;
+  left: 485px;
+    top: 258px;
+}
+
+.modal_window_genre {
+  width: 248px;
+  background-color: #313131;
+  height: 305px;
+  border-radius: 12px;
+  position: absolute;
+  left: 640px;
+    top: 258px;
+}
+
+.modal_artist {
+  color: #FFFFFF;
+}
+
+.modal_active {
+  color: #B672FF;
 }
