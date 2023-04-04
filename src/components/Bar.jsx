@@ -1,15 +1,6 @@
 import { useState } from 'react'
 
-// const artists = ['Nero', 'Dynoro, Outwork, Mr. Gee'];
-
 function Bar() {
-  //  const [isOpenedArtists, setOpenedArtists] = useState(false);
-  //  const [isOpenedYear, setOpenedYear] = useState(false);
-  //  const [isOpenedGenre, setOpenedGenre] = useState(false);
-  //  const [isActiveButtonFilterArtists, setActiveButtonFilterArtists] = useState(false);
-  //  const [isActiveButtonFilterYear, setActiveButtonFilterYear] = useState(false);
-  //  const [isActiveButtonFilterGenre, setActiveButtonFilterGenre] = useState(false);
-
   const [isOpenedModal, setOpenedModal] = useState(false)
   const FILTERS = {
     author: 'author',
