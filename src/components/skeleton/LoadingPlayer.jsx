@@ -1,6 +1,6 @@
-import * as Styled from './styles/stylesPlayer'
+import * as Styled from '../styles/stylesPlayer'
 
-function Player() {
+function LoadingBar() {
   return (
     <Styled.PlayerBar>
       <Styled.PlayerBarContent>
@@ -39,18 +39,18 @@ function Player() {
               <Styled.PlayerTrackPlayContain>
                 <Styled.PlayerTrackPlayImage>
                   <Styled.PlayerTrackPlaySvg alt="music">
-                    <use xlinkHref="./img/icon/sprite.svg#icon-note" />
+                    <img
+                      className="sidebar__img"
+                      src="img/skeleton-track-bar.png"
+                      alt="bar"
+                    />
                   </Styled.PlayerTrackPlaySvg>
                 </Styled.PlayerTrackPlayImage>
                 <Styled.PlayerTrackPlayAuthor>
-                  <Styled.PlayerTrackPlayAuthorLink href="http://">
-                    Ты та...
-                  </Styled.PlayerTrackPlayAuthorLink>
+                  <Styled.PlayerTrackPlayAuthorLink />
                 </Styled.PlayerTrackPlayAuthor>
                 <Styled.PlayerTrackPlayAlbum>
-                  <Styled.PlayerTrackPlayAlbumLink href="http://">
-                    Баста
-                  </Styled.PlayerTrackPlayAlbumLink>
+                  <Styled.PlayerTrackPlayAlbumLink />
                 </Styled.PlayerTrackPlayAlbum>
               </Styled.PlayerTrackPlayContain>
 
@@ -89,4 +89,4 @@ function Player() {
   )
 }
 
-export default Player
+export default LoadingBar

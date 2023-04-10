@@ -78,24 +78,7 @@ function Bar() {
           <div className="modal_artist">element3</div>
         </div>
       )}
-      {/* <div className="centerblock__filter filter">
-                        <div className="filter__title">Искать по:</div>
-                        <div className={ isActiveButtonFilterArtists ? ("_btn-text-active button-author") : ("filter__button button-author _btn-text")} onClick={ () => {setOpenedArtists(!isOpenedArtists);setOpenedYear(false);setOpenedGenre(false);setActiveButtonFilterArtists(!isActiveButtonFilterArtists);setActiveButtonFilterYear(false);setActiveButtonFilterGenre(false)}}>исполнителю</div>
-                        <div className={ isActiveButtonFilterYear ? ("_btn-text-active button-year") : ("filter__button button-year _btn-text")} onClick={ () => {setOpenedYear(!isOpenedYear);setOpenedArtists(false);setOpenedGenre(false);setActiveButtonFilterYear(!isActiveButtonFilterYear);setActiveButtonFilterArtists(false);setActiveButtonFilterGenre(false)} }>году выпуска</div>
-                        <div className={ isActiveButtonFilterGenre ? ("_btn-text-active button-genre") : ("filter__button button-genre _btn-text")} onClick={ () => {setOpenedGenre(!isOpenedGenre);setOpenedYear(false);setOpenedArtists(false);setActiveButtonFilterGenre(!isActiveButtonFilterGenre);setActiveButtonFilterArtists(false);setActiveButtonFilterYear(false)} }>жанру</div>
-                    </div>
-                    { isOpenedArtists && (<div className="modal_window_artist">{artists.forEach(element => {
-                        <div className="modal_artist">{element}</div>
-                    })}
-                    </div>) }
-                    { isOpenedYear && (<div className="modal_window_year">{artists.forEach(element => {
-                        <div className="modal_artist">{element}</div>
-                    })}
-                    </div>) }
-                    { isOpenedGenre && (<div className="modal_window_genre">{artists.forEach(element => {
-                        <div className="modal_artist">{element}</div>
-                    })}
-                    </div>) } */}
+
       <div className="centerblock__content">
         <div className="content__title playlist-title">
           <div className="playlist-title__col col01">Трек</div>

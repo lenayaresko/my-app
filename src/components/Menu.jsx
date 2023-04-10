@@ -1,29 +1,35 @@
-import { useState } from 'react';
+import { useState } from 'react'
+import * as Styled from './styles/stylesMenu'
 
 function Menu() {
-
-    const [isVisible, setVisible] = useState(false);
-    return (
-        <nav className="main__nav nav">
-        <div className="nav__logo logo">
-            <img className="logo__image" src="./img/logo.png" alt="logo"/>
-        </div>
-        <div className="nav__burger burger" onClick={ () => setVisible(!isVisible) }>
-            <span className="burger__line"/>
-            <span className="burger__line"/>
-            <span className="burger__line"/>
-        </div>
-        { isVisible && (
-        <div className="nav__menu menu">
-            <ul className="menu__list">
-                <li className="menu__item"><a href="http://" className="menu__link">Главное</a></li>
-                <li className="menu__item"><a href="http://" className="menu__link">Мой плейлист</a></li>
-                <li className="menu__item"><a href="http://" className="menu__link">Войти</a></li>
-            </ul>
-        </div>
-        ) }
+  const [isVisible, setVisible] = useState(false)
+  return (
+    <nav className="main__nav nav">
+      <Styled.NavLogo>
+        <Styled.NavLogoImage src="./img/logo.png" alt="logo" />
+      </Styled.NavLogo>
+      <Styled.NavBurger onClick={() => setVisible(!isVisible)}>
+        <Styled.NavBurgerLine />
+        <Styled.NavBurgerLine />
+        <Styled.NavBurgerLine />
+      </Styled.NavBurger>
+      {isVisible && (
+        <Styled.NavMenu>
+          <Styled.MenuList>
+            <Styled.MenuItem>
+              <Styled.MenuLink href="http://">Главное</Styled.MenuLink>
+            </Styled.MenuItem>
+            <Styled.MenuItem>
+              <Styled.MenuLink href="http://">Мой плейлист</Styled.MenuLink>
+            </Styled.MenuItem>
+            <Styled.MenuItem>
+              <Styled.MenuLink href="http://">Войти</Styled.MenuLink>
+            </Styled.MenuItem>
+          </Styled.MenuList>
+        </Styled.NavMenu>
+      )}
     </nav>
-    )
-    }
-    
-    export default Menu;
+  )
+}
+
+export default Menu
