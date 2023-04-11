@@ -6,7 +6,6 @@ import Name from './components/Name'
 import LoadingName from './components/skeleton/LoadingName'
 import LoadingPlayer from './components/skeleton/LoadingPlayer'
 import Player from './components/Player'
-import './App.css'
 
 function App() {
   const [isLoading, setLoading] = useState(true)
@@ -15,15 +14,15 @@ function App() {
   }, [])
 
   return (
-    <div id="root" className="container">
-      <main className="main">
+    <Styled.Container id="root">
+      <Styled.Main>
         <Styled.GlobalStyle />
         <Menu />
         <Bar />
         {isLoading ? <LoadingName /> : <Name />}
-      </main>
+      </Styled.Main>
       <div className="bar">{isLoading ? <LoadingPlayer /> : <Player />}</div>
-    </div>
+    </Styled.Container>
   )
 }
 

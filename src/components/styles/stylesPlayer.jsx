@@ -63,6 +63,21 @@ export const PlayerControls = styled.div`
   -ms-flex-direction: row;
   flex-direction: row;
   padding: 0 27px 0 31px;
+  div:hover svg {
+    fill: transparent;
+    stroke: #acacac;
+    cursor: pointer;
+  }
+  div:active svg {
+    fill: transparent;
+    stroke: #ffffff;
+    cursor: pointer;
+  }
+  div:active {
+    fill: #696969;
+    stroke: #ffffff;
+    cursor: pointer;
+  }
 `
 
 export const PlayerButtons = styled.div`
@@ -153,6 +168,7 @@ export const PlayerTrackPlayContain = styled.div`
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  align-content: center;
 `
 
 export const PlayerTrackPlayImage = styled.div`
@@ -225,6 +241,21 @@ export const PlayerTrackPlayLikeDis = styled.div`
   -ms-flex-align: center;
   align-items: center;
   margin-left: 26%;
+  div:hover svg {
+    fill: transparent;
+    stroke: #acacac;
+    cursor: pointer;
+  }
+  div:active svg {
+    fill: transparent;
+    stroke: #ffffff;
+    cursor: pointer;
+  }
+  div:active {
+    fill: #696969;
+    stroke: #ffffff;
+    cursor: pointer;
+  }
 `
 
 export const PlayerButtonTrackPlayLikeSvg = styled.svg`
@@ -291,9 +322,15 @@ export const PlayerButtonBarVolumeProgressLine = styled.input`
   width: 109px;
 `
 
-export const PlayerButtonBarIcon = styled.div`
-  width: 250px;
-  height: 150px;
+export const PlayerButtonBarIcon = styled.div``
+
+export const PlayerButtonTrackPlayLike = styled.div`
+  padding: 5px;
+`
+
+export const PlayerButtonTrackPlayDislike = styled(PlayerButtonBarIcon)`
+  padding: 5px;
+  margin-left: 28.5px;
   div:hover svg {
     fill: transparent;
     stroke: #acacac;
@@ -309,15 +346,6 @@ export const PlayerButtonBarIcon = styled.div`
     stroke: #ffffff;
     cursor: pointer;
   }
-`
-
-export const PlayerButtonTrackPlayLike = styled(PlayerButtonBarIcon)`
-  padding: 5px;
-`
-
-export const PlayerButtonTrackPlayDislike = styled(PlayerButtonBarIcon)`
-  padding: 5px;
-  margin-left: 28.5px;
 `
 
 export default PlayerBar

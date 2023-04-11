@@ -4,7 +4,7 @@ import * as Styled from './styles/stylesMenu'
 function Menu() {
   const [isVisible, setVisible] = useState(false)
   return (
-    <nav className="main__nav nav">
+    <Styled.MainNav>
       <Styled.NavLogo>
         <Styled.NavLogoImage src="./img/logo.png" alt="logo" />
       </Styled.NavLogo>
@@ -28,7 +28,7 @@ function Menu() {
           </Styled.MenuList>
         </Styled.NavMenu>
       )}
-    </nav>
+    </Styled.MainNav>
   )
 }
 

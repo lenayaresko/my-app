@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import * as Styled from './styles/stylesBar'
 
 function Bar() {
   const [isOpenedModal, setOpenedModal] = useState(false)
@@ -17,417 +18,453 @@ function Bar() {
   }
 
   return (
-    <div className="main__centerblock centerblock">
-      <div className="centerblock__search search">
-        <svg className="search__svg">
+    <Styled.MainCenterBlock>
+      <Styled.MainCenterBlockSearch>
+        <Styled.MainCenterBlockSearchSvg>
           <use xlinkHref="./img/icon/sprite.svg#icon-search" />
-        </svg>
-        <input
-          className="search__text"
+        </Styled.MainCenterBlockSearchSvg>
+        <Styled.MainCenterBlockSearchText
           type="search"
           placeholder="Поиск"
           name="search"
         />
-      </div>
-      <h2 className="centerblock__h2">Треки</h2>
-      <div className="centerblock__filter filter">
-        <div className="filter__title">Искать по:</div>
-        <div
-          className={
-            isOpenedModal === FILTERS.author
-              ? '_btn-text-active button-author'
-              : 'filter__button button-author _btn-text'
-          }
+      </Styled.MainCenterBlockSearch>
+      <Styled.MainCenterBlockH2>Треки</Styled.MainCenterBlockH2>
+      <Styled.MainCenterBlockFilter>
+        <Styled.MainCenterBlockFilterTitle>
+          Искать по:
+        </Styled.MainCenterBlockFilterTitle>
+        <Styled.MainCenterBlockFilterButtonsBlock>
+        <Styled.MainCenterFilterButton
+          $mode={isOpenedModal === FILTERS.author ? 'active' : 'not_active'}
           onClick={() => onButtonClick(FILTERS.author)}
         >
           исполнителю
-        </div>
-        <div
-          className={
-            isOpenedModal === FILTERS.year
-              ? '_btn-text-active button-author'
-              : 'filter__button button-author _btn-text'
-          }
+        </Styled.MainCenterFilterButton>
+        <Styled.MainCenterFilterButton
+          $mode={isOpenedModal === FILTERS.year ? 'active' : 'not_active'}
           onClick={() => onButtonClick(FILTERS.year)}
         >
           году выпуска
-        </div>
-        <div
-          className={
-            isOpenedModal === FILTERS.genre
-              ? '_btn-text-active button-author'
-              : 'filter__button button-author _btn-text'
-          }
+        </Styled.MainCenterFilterButton>
+        <Styled.MainCenterFilterButton
+          $mode={isOpenedModal === FILTERS.genre ? 'active' : 'not_active'}
           onClick={() => onButtonClick(FILTERS.genre)}
         >
           жанру
-        </div>
-      </div>
+        </Styled.MainCenterFilterButton>
+        </Styled.MainCenterBlockFilterButtonsBlock>
+      </Styled.MainCenterBlockFilter>
       {isOpenedModal === FILTERS.author && (
-        <div className="modal_window_artist">
-          <div className="modal_artist">element1</div>
-        </div>
+        <Styled.MainCenterBlockModalWindowArtist>
+          <Styled.MainCenterBlockModalArtist>
+            element1
+          </Styled.MainCenterBlockModalArtist>
+        </Styled.MainCenterBlockModalWindowArtist>
       )}
       {isOpenedModal === FILTERS.year && (
-        <div className="modal_window_year">
-          <div className="modal_artist">element2</div>
-        </div>
+        <Styled.MainCenterBlockModalWindowYear>
+          <Styled.MainCenterBlockModalArtist>
+            element2
+          </Styled.MainCenterBlockModalArtist>
+        </Styled.MainCenterBlockModalWindowYear>
       )}
       {isOpenedModal === FILTERS.genre && (
-        <div className="modal_window_genre">
-          <div className="modal_artist">element3</div>
-        </div>
+        <Styled.MainCenterBlockModalWindowGenre>
+          <Styled.MainCenterBlockModalArtist>
+            element3
+          </Styled.MainCenterBlockModalArtist>
+        </Styled.MainCenterBlockModalWindowGenre>
       )}
 
-      <div className="centerblock__content">
-        <div className="content__title playlist-title">
-          <div className="playlist-title__col col01">Трек</div>
-          <div className="playlist-title__col col02">ИСПОЛНИТЕЛЬ</div>
-          <div className="playlist-title__col col03">АЛЬБОМ</div>
-          <div className="playlist-title__col col04">
-            <svg className="playlist-title__svg" alt="time">
+      <Styled.MainCenterBlockContent>
+        <Styled.MainCenterBlockContentTitle>
+          <Styled.MainCenterPlaylistTitleCol01>
+            Трек
+          </Styled.MainCenterPlaylistTitleCol01>
+          <Styled.MainCenterPlaylistTitleCol02>
+            ИСПОЛНИТЕЛЬ
+          </Styled.MainCenterPlaylistTitleCol02>
+          <Styled.MainCenterPlaylistTitleCol03>
+            АЛЬБОМ
+          </Styled.MainCenterPlaylistTitleCol03>
+          <Styled.MainCenterPlaylistTitleCol04>
+            <Styled.MainCenterBlockContentTitleSvg alt="time">
               <use xlinkHref="./img/icon/sprite.svg#icon-watch" />
-            </svg>
-          </div>
-        </div>
-        <div className="content__playlist playlist">
-          <div className="playlist__item">
-            <div className="playlist__track track">
-              <div className="track__title">
-                <div className="track__title-image">
-                  <svg className="track__title-svg" alt="music">
+            </Styled.MainCenterBlockContentTitleSvg>
+          </Styled.MainCenterPlaylistTitleCol04>
+        </Styled.MainCenterBlockContentTitle>
+        <Styled.MainCenterPlaylistContentPlaylist>
+          <Styled.MainCenterPlaylistContentPlaylistItem>
+            <Styled.MainCenterPlaylistContentPlaylistTrack>
+              <Styled.MainCenterPlaylistContentPlaylistTrackTitle>
+                <Styled.MainCenterPlaylistContentPlaylistTrackTitleImage>
+                  <Styled.MainCenterPlaylistContentPlaylistTrackTitleSvg alt="music">
                     <use xlinkHref="./img/icon/sprite.svg#icon-note" />
-                  </svg>
+                  </Styled.MainCenterPlaylistContentPlaylistTrackTitleSvg>
+                </Styled.MainCenterPlaylistContentPlaylistTrackTitleImage>
+                <div>
+                  <Styled.MainCenterPlaylistContentPlaylistTrackTitleLink href="http://">
+                    Guilt{' '}
+                    <Styled.MainCenterPlaylistContentPlaylistTrackTitleSpan />
+                  </Styled.MainCenterPlaylistContentPlaylistTrackTitleLink>
                 </div>
-                <div className="track__title-text">
-                  <a className="track__title-link" href="http://">
-                    Guilt <span className="track__title-span" />
-                  </a>
-                </div>
-              </div>
-              <div className="track__author">
-                <a className="track__author-link" href="http://">
+              </Styled.MainCenterPlaylistContentPlaylistTrackTitle>
+              <Styled.MainCenterPlaylistContentPlaylistTrackAuthor>
+                <Styled.MainCenterPlaylistContentPlaylistTrackAuthorLink href="http://">
                   Nero
-                </a>
-              </div>
-              <div className="track__album">
-                <a className="track__album-link" href="http://">
+                </Styled.MainCenterPlaylistContentPlaylistTrackAuthorLink>
+              </Styled.MainCenterPlaylistContentPlaylistTrackAuthor>
+              <Styled.MainCenterPlaylistContentPlaylistTrackAlbum>
+                <Styled.MainCenterPlaylistContentPlaylistTrackAlbumLink href="http://">
                   Welcome Reality
-                </a>
-              </div>
-              <div className="track__time">
-                <svg className="track__time-svg" alt="time">
+                </Styled.MainCenterPlaylistContentPlaylistTrackAlbumLink>
+              </Styled.MainCenterPlaylistContentPlaylistTrackAlbum>
+              <div>
+                <Styled.MainCenterPlaylistContentPlaylistTrackTimeSvg alt="time">
                   <use xlinkHref="./img/icon/sprite.svg#icon-like" />
-                </svg>
-                <span className="track__time-text">4:44</span>
+                </Styled.MainCenterPlaylistContentPlaylistTrackTimeSvg>
+                <Styled.MainCenterPlaylistContentPlaylistTrackTimeSpan>
+                  4:44
+                </Styled.MainCenterPlaylistContentPlaylistTrackTimeSpan>
               </div>
-            </div>
-          </div>
+            </Styled.MainCenterPlaylistContentPlaylistTrack>
+          </Styled.MainCenterPlaylistContentPlaylistItem>
 
-          <div className="playlist__item">
-            <div className="playlist__track track">
-              <div className="track__title">
-                <div className="track__title-image">
-                  <svg className="track__title-svg" alt="music">
+          <Styled.MainCenterPlaylistContentPlaylistItem>
+            <Styled.MainCenterPlaylistContentPlaylistTrack>
+              <Styled.MainCenterPlaylistContentPlaylistTrackTitle>
+                <Styled.MainCenterPlaylistContentPlaylistTrackTitleImage>
+                  <Styled.MainCenterPlaylistContentPlaylistTrackTitleSvg alt="music">
                     <use xlinkHref="./img/icon/sprite.svg#icon-note" />
-                  </svg>
+                  </Styled.MainCenterPlaylistContentPlaylistTrackTitleSvg>
+                </Styled.MainCenterPlaylistContentPlaylistTrackTitleImage>
+                <div>
+                  <Styled.MainCenterPlaylistContentPlaylistTrackTitleLink href="http://">
+                    Elektro{' '}
+                    <Styled.MainCenterPlaylistContentPlaylistTrackTitleSpan />
+                  </Styled.MainCenterPlaylistContentPlaylistTrackTitleLink>
                 </div>
-                <div className="track__title-text">
-                  <a className="track__title-link" href="http://">
-                    Elektro <span className="track__title-span" />
-                  </a>
-                </div>
-              </div>
-              <div className="track__author">
-                <a className="track__author-link" href="http://">
+              </Styled.MainCenterPlaylistContentPlaylistTrackTitle>
+              <Styled.MainCenterPlaylistContentPlaylistTrackAuthor>
+                <Styled.MainCenterPlaylistContentPlaylistTrackAuthorLink href="http://">
                   Dynoro, Outwork, Mr. Gee
-                </a>
-              </div>
-              <div className="track__album">
-                <a className="track__album-link" href="http://">
+                </Styled.MainCenterPlaylistContentPlaylistTrackAuthorLink>
+              </Styled.MainCenterPlaylistContentPlaylistTrackAuthor>
+              <Styled.MainCenterPlaylistContentPlaylistTrackAlbum>
+                <Styled.MainCenterPlaylistContentPlaylistTrackAlbumLink href="http://">
                   Elektro
-                </a>
-              </div>
-              <div className="track__time">
-                <svg className="track__time-svg" alt="time">
+                </Styled.MainCenterPlaylistContentPlaylistTrackAlbumLink>
+              </Styled.MainCenterPlaylistContentPlaylistTrackAlbum>
+              <div>
+                <Styled.MainCenterPlaylistContentPlaylistTrackTimeSvg alt="time">
                   <use xlinkHref="./img/icon/sprite.svg#icon-like" />
-                </svg>
-                <span className="track__time-text">2:22</span>
+                </Styled.MainCenterPlaylistContentPlaylistTrackTimeSvg>
+                <Styled.MainCenterPlaylistContentPlaylistTrackTimeSpan>
+                  2:22
+                </Styled.MainCenterPlaylistContentPlaylistTrackTimeSpan>
               </div>
-            </div>
-          </div>
+            </Styled.MainCenterPlaylistContentPlaylistTrack>
+          </Styled.MainCenterPlaylistContentPlaylistItem>
 
-          <div className="playlist__item">
-            <div className="playlist__track track">
-              <div className="track__title">
-                <div className="track__title-image">
-                  <svg className="track__title-svg" alt="music">
+          <Styled.MainCenterPlaylistContentPlaylistItem>
+            <Styled.MainCenterPlaylistContentPlaylistTrack>
+              <Styled.MainCenterPlaylistContentPlaylistTrackTitle>
+                <Styled.MainCenterPlaylistContentPlaylistTrackTitleImage>
+                  <Styled.MainCenterPlaylistContentPlaylistTrackTitleSvg alt="music">
                     <use xlinkHref="./img/icon/sprite.svg#icon-note" />
-                  </svg>
+                  </Styled.MainCenterPlaylistContentPlaylistTrackTitleSvg>
+                </Styled.MainCenterPlaylistContentPlaylistTrackTitleImage>
+                <div>
+                  <Styled.MainCenterPlaylistContentPlaylistTrackTitleLink href="http://">
+                    I’m Fire{' '}
+                    <Styled.MainCenterPlaylistContentPlaylistTrackTitleSpan />
+                  </Styled.MainCenterPlaylistContentPlaylistTrackTitleLink>
                 </div>
-                <div className="track__title-text">
-                  <a className="track__title-link" href="http://">
-                    I’m Fire <span className="track__title-span" />
-                  </a>
-                </div>
-              </div>
-              <div className="track__author">
-                <a className="track__author-link" href="http://">
+              </Styled.MainCenterPlaylistContentPlaylistTrackTitle>
+              <Styled.MainCenterPlaylistContentPlaylistTrackAuthor>
+                <Styled.MainCenterPlaylistContentPlaylistTrackAuthorLink href="http://">
                   Ali Bakgor
-                </a>
-              </div>
-              <div className="track__album">
-                <a className="track__album-link" href="http://">
+                </Styled.MainCenterPlaylistContentPlaylistTrackAuthorLink>
+              </Styled.MainCenterPlaylistContentPlaylistTrackAuthor>
+              <Styled.MainCenterPlaylistContentPlaylistTrackAlbum>
+                <Styled.MainCenterPlaylistContentPlaylistTrackAlbumLink href="http://">
                   I’m Fire
-                </a>
-              </div>
-              <div className="track__time">
-                <svg className="track__time-svg" alt="time">
+                </Styled.MainCenterPlaylistContentPlaylistTrackAlbumLink>
+              </Styled.MainCenterPlaylistContentPlaylistTrackAlbum>
+              <div>
+                <Styled.MainCenterPlaylistContentPlaylistTrackTimeSvg alt="time">
                   <use xlinkHref="./img/icon/sprite.svg#icon-like" />
-                </svg>
-                <span className="track__time-text">2:22</span>
+                </Styled.MainCenterPlaylistContentPlaylistTrackTimeSvg>
+                <Styled.MainCenterPlaylistContentPlaylistTrackTimeSpan>
+                  2:22
+                </Styled.MainCenterPlaylistContentPlaylistTrackTimeSpan>
               </div>
-            </div>
-          </div>
+            </Styled.MainCenterPlaylistContentPlaylistTrack>
+          </Styled.MainCenterPlaylistContentPlaylistItem>
 
-          <div className="playlist__item">
-            <div className="playlist__track track">
-              <div className="track__title">
-                <div className="track__title-image">
-                  <svg className="track__title-svg" alt="music">
+          <Styled.MainCenterPlaylistContentPlaylistItem>
+            <Styled.MainCenterPlaylistContentPlaylistTrack>
+              <Styled.MainCenterPlaylistContentPlaylistTrackTitle>
+                <Styled.MainCenterPlaylistContentPlaylistTrackTitleImage>
+                  <Styled.MainCenterPlaylistContentPlaylistTrackTitleSvg alt="music">
                     <use xlinkHref="./img/icon/sprite.svg#icon-note" />
-                  </svg>
+                  </Styled.MainCenterPlaylistContentPlaylistTrackTitleSvg>
+                </Styled.MainCenterPlaylistContentPlaylistTrackTitleImage>
+                <div>
+                  <Styled.MainCenterPlaylistContentPlaylistTrackTitleLink href="http://">
+                    Non Stop{' '}
+                    <Styled.MainCenterPlaylistContentPlaylistTrackTitleSpan>
+                      (Remix)
+                    </Styled.MainCenterPlaylistContentPlaylistTrackTitleSpan>
+                  </Styled.MainCenterPlaylistContentPlaylistTrackTitleLink>
                 </div>
-                <div className="track__title-text">
-                  <a className="track__title-link" href="http://">
-                    Non Stop <span className="track__title-span">(Remix)</span>
-                  </a>
-                </div>
-              </div>
-              <div className="track__author">
-                <a className="track__author-link" href="http://">
+              </Styled.MainCenterPlaylistContentPlaylistTrackTitle>
+              <Styled.MainCenterPlaylistContentPlaylistTrackAuthor>
+                <Styled.MainCenterPlaylistContentPlaylistTrackAuthorLink href="http://">
                   Стоункат, Psychopath
-                </a>
-              </div>
-              <div className="track__album">
-                <a className="track__album-link" href="http://">
+                </Styled.MainCenterPlaylistContentPlaylistTrackAuthorLink>
+              </Styled.MainCenterPlaylistContentPlaylistTrackAuthor>
+              <Styled.MainCenterPlaylistContentPlaylistTrackAlbum>
+                <Styled.MainCenterPlaylistContentPlaylistTrackAlbumLink href="http://">
                   Non Stop
-                </a>
-              </div>
-              <div className="track__time">
-                <svg className="track__time-svg" alt="time">
+                </Styled.MainCenterPlaylistContentPlaylistTrackAlbumLink>
+              </Styled.MainCenterPlaylistContentPlaylistTrackAlbum>
+              <div>
+                <Styled.MainCenterPlaylistContentPlaylistTrackTimeSvg alt="time">
                   <use xlinkHref="./img/icon/sprite.svg#icon-like" />
-                </svg>
-                <span className="track__time-text">4:12</span>
+                </Styled.MainCenterPlaylistContentPlaylistTrackTimeSvg>
+                <Styled.MainCenterPlaylistContentPlaylistTrackTimeSpan>
+                  4:12
+                </Styled.MainCenterPlaylistContentPlaylistTrackTimeSpan>
               </div>
-            </div>
-          </div>
+            </Styled.MainCenterPlaylistContentPlaylistTrack>
+          </Styled.MainCenterPlaylistContentPlaylistItem>
 
-          <div className="playlist__item">
-            <div className="playlist__track track">
-              <div className="track__title">
-                <div className="track__title-image">
-                  <svg className="track__title-svg" alt="music">
+          <Styled.MainCenterPlaylistContentPlaylistItem>
+            <Styled.MainCenterPlaylistContentPlaylistTrack>
+              <Styled.MainCenterPlaylistContentPlaylistTrackTitle>
+                <Styled.MainCenterPlaylistContentPlaylistTrackTitleImage>
+                  <Styled.MainCenterPlaylistContentPlaylistTrackTitleSvg alt="music">
                     <use xlinkHref="./img/icon/sprite.svg#icon-note" />
-                  </svg>
-                </div>
-                <div className="track__title-text">
-                  <a className="track__title-link" href="http://">
+                  </Styled.MainCenterPlaylistContentPlaylistTrackTitleSvg>
+                </Styled.MainCenterPlaylistContentPlaylistTrackTitleImage>
+                <div>
+                  <Styled.MainCenterPlaylistContentPlaylistTrackTitleLink href="http://">
                     Run Run{' '}
-                    <span className="track__title-span">(feat. AR/CO)</span>
-                  </a>
+                    <Styled.MainCenterPlaylistContentPlaylistTrackTitleSpan>
+                      (feat. AR/CO)
+                    </Styled.MainCenterPlaylistContentPlaylistTrackTitleSpan>
+                  </Styled.MainCenterPlaylistContentPlaylistTrackTitleLink>
                 </div>
-              </div>
-              <div className="track__author">
-                <a className="track__author-link" href="http://">
+              </Styled.MainCenterPlaylistContentPlaylistTrackTitle>
+              <Styled.MainCenterPlaylistContentPlaylistTrackAuthor>
+                <Styled.MainCenterPlaylistContentPlaylistTrackAuthorLink href="http://">
                   Jaded, Will Clarke, AR/CO
-                </a>
-              </div>
-              <div className="track__album">
-                <a className="track__album-link" href="http://">
+                </Styled.MainCenterPlaylistContentPlaylistTrackAuthorLink>
+              </Styled.MainCenterPlaylistContentPlaylistTrackAuthor>
+              <Styled.MainCenterPlaylistContentPlaylistTrackAlbum>
+                <Styled.MainCenterPlaylistContentPlaylistTrackAlbumLink href="http://">
                   Run Run
-                </a>
-              </div>
-              <div className="track__time">
-                <svg className="track__time-svg" alt="time">
+                </Styled.MainCenterPlaylistContentPlaylistTrackAlbumLink>
+              </Styled.MainCenterPlaylistContentPlaylistTrackAlbum>
+              <div>
+                <Styled.MainCenterPlaylistContentPlaylistTrackTimeSvg alt="time">
                   <use xlinkHref="./img/icon/sprite.svg#icon-like" />
-                </svg>
-                <span className="track__time-text">2:54</span>
+                </Styled.MainCenterPlaylistContentPlaylistTrackTimeSvg>
+                <Styled.MainCenterPlaylistContentPlaylistTrackTimeSpan>
+                  2:54
+                </Styled.MainCenterPlaylistContentPlaylistTrackTimeSpan>
               </div>
-            </div>
-          </div>
+            </Styled.MainCenterPlaylistContentPlaylistTrack>
+          </Styled.MainCenterPlaylistContentPlaylistItem>
 
-          <div className="playlist__item">
-            <div className="playlist__track track">
-              <div className="track__title">
-                <div className="track__title-image">
-                  <svg className="track__title-svg" alt="music">
+          <Styled.MainCenterPlaylistContentPlaylistItem>
+            <Styled.MainCenterPlaylistContentPlaylistTrack>
+              <Styled.MainCenterPlaylistContentPlaylistTrackTitle>
+                <Styled.MainCenterPlaylistContentPlaylistTrackTitleImage>
+                  <Styled.MainCenterPlaylistContentPlaylistTrackTitleSvg alt="music">
                     <use xlinkHref="./img/icon/sprite.svg#icon-note" />
-                  </svg>
-                </div>
-                <div className="track__title-text">
-                  <a className="track__title-link" href="http://">
+                  </Styled.MainCenterPlaylistContentPlaylistTrackTitleSvg>
+                </Styled.MainCenterPlaylistContentPlaylistTrackTitleImage>
+                <div>
+                  <Styled.MainCenterPlaylistContentPlaylistTrackTitleLink href="http://">
                     Eyes on Fire{' '}
-                    <span className="track__title-span">(Zeds Dead Remix)</span>
-                  </a>
+                    <Styled.MainCenterPlaylistContentPlaylistTrackTitleSpan>
+                      (Zeds Dead Remix)
+                    </Styled.MainCenterPlaylistContentPlaylistTrackTitleSpan>
+                  </Styled.MainCenterPlaylistContentPlaylistTrackTitleLink>
                 </div>
-              </div>
-              <div className="track__author">
-                <a className="track__author-link" href="http://">
+              </Styled.MainCenterPlaylistContentPlaylistTrackTitle>
+              <Styled.MainCenterPlaylistContentPlaylistTrackAuthor>
+                <Styled.MainCenterPlaylistContentPlaylistTrackAuthorLink href="http://">
                   Blue Foundation, Zeds Dead
-                </a>
-              </div>
-              <div className="track__album">
-                <a className="track__album-link" href="http://">
+                </Styled.MainCenterPlaylistContentPlaylistTrackAuthorLink>
+              </Styled.MainCenterPlaylistContentPlaylistTrackAuthor>
+              <Styled.MainCenterPlaylistContentPlaylistTrackAlbum>
+                <Styled.MainCenterPlaylistContentPlaylistTrackAlbumLink href="http://">
                   Eyes on Fire
-                </a>
-              </div>
-              <div className="track__time">
-                <svg className="track__time-svg" alt="time">
+                </Styled.MainCenterPlaylistContentPlaylistTrackAlbumLink>
+              </Styled.MainCenterPlaylistContentPlaylistTrackAlbum>
+              <div>
+                <Styled.MainCenterPlaylistContentPlaylistTrackTimeSvg alt="time">
                   <use xlinkHref="./img/icon/sprite.svg#icon-like" />
-                </svg>
-                <span className="track__time-text">5:20</span>
+                </Styled.MainCenterPlaylistContentPlaylistTrackTimeSvg>
+                <Styled.MainCenterPlaylistContentPlaylistTrackTimeSpan>
+                  5:20
+                </Styled.MainCenterPlaylistContentPlaylistTrackTimeSpan>
               </div>
-            </div>
-          </div>
+            </Styled.MainCenterPlaylistContentPlaylistTrack>
+          </Styled.MainCenterPlaylistContentPlaylistItem>
 
-          <div className="playlist__item">
-            <div className="playlist__track track">
-              <div className="track__title">
-                <div className="track__title-image">
-                  <svg className="track__title-svg" alt="music">
+          <Styled.MainCenterPlaylistContentPlaylistItem>
+            <Styled.MainCenterPlaylistContentPlaylistTrack>
+              <Styled.MainCenterPlaylistContentPlaylistTrackTitle>
+                <Styled.MainCenterPlaylistContentPlaylistTrackTitleImage>
+                  <Styled.MainCenterPlaylistContentPlaylistTrackTitleSvg alt="music">
                     <use xlinkHref="./img/icon/sprite.svg#icon-note" />
-                  </svg>
-                </div>
-                <div className="track__title-text">
-                  <a className="track__title-link" href="http://">
+                  </Styled.MainCenterPlaylistContentPlaylistTrackTitleSvg>
+                </Styled.MainCenterPlaylistContentPlaylistTrackTitleImage>
+                <div>
+                  <Styled.MainCenterPlaylistContentPlaylistTrackTitleLink href="http://">
                     Mucho Bien{' '}
-                    <span className="track__title-span">
+                    <Styled.MainCenterPlaylistContentPlaylistTrackTitleSpan>
                       (Hi Profile Remix)
-                    </span>
-                  </a>
+                    </Styled.MainCenterPlaylistContentPlaylistTrackTitleSpan>
+                  </Styled.MainCenterPlaylistContentPlaylistTrackTitleLink>
                 </div>
-              </div>
-              <div className="track__author">
-                <a className="track__author-link" href="http://">
+              </Styled.MainCenterPlaylistContentPlaylistTrackTitle>
+              <Styled.MainCenterPlaylistContentPlaylistTrackAuthor>
+                <Styled.MainCenterPlaylistContentPlaylistTrackAuthorLink href="http://">
                   HYBIT, Mr. Black, Offer Nissim, Hi Profile
-                </a>
-              </div>
-              <div className="track__album">
-                <a className="track__album-link" href="http://">
+                </Styled.MainCenterPlaylistContentPlaylistTrackAuthorLink>
+              </Styled.MainCenterPlaylistContentPlaylistTrackAuthor>
+              <Styled.MainCenterPlaylistContentPlaylistTrackAlbum>
+                <Styled.MainCenterPlaylistContentPlaylistTrackAlbumLink href="http://">
                   Mucho Bien
-                </a>
-              </div>
-              <div className="track__time">
-                <svg className="track__time-svg" alt="time">
+                </Styled.MainCenterPlaylistContentPlaylistTrackAlbumLink>
+              </Styled.MainCenterPlaylistContentPlaylistTrackAlbum>
+              <div>
+                <Styled.MainCenterPlaylistContentPlaylistTrackTimeSvg alt="time">
                   <use xlinkHref="./img/icon/sprite.svg#icon-like" />
-                </svg>
-                <span className="track__time-text">3:41</span>
+                </Styled.MainCenterPlaylistContentPlaylistTrackTimeSvg>
+                <Styled.MainCenterPlaylistContentPlaylistTrackTimeSpan>
+                  3:41
+                </Styled.MainCenterPlaylistContentPlaylistTrackTimeSpan>
               </div>
-            </div>
-          </div>
+            </Styled.MainCenterPlaylistContentPlaylistTrack>
+          </Styled.MainCenterPlaylistContentPlaylistItem>
 
-          <div className="playlist__item">
-            <div className="playlist__track track">
-              <div className="track__title">
-                <div className="track__title-image">
-                  <svg className="track__title-svg" alt="music">
+          <Styled.MainCenterPlaylistContentPlaylistItem>
+            <Styled.MainCenterPlaylistContentPlaylistTrack>
+              <Styled.MainCenterPlaylistContentPlaylistTrackTitle>
+                <Styled.MainCenterPlaylistContentPlaylistTrackTitleImage>
+                  <Styled.MainCenterPlaylistContentPlaylistTrackTitleSvg alt="music">
                     <use xlinkHref="./img/icon/sprite.svg#icon-note" />
-                  </svg>
+                  </Styled.MainCenterPlaylistContentPlaylistTrackTitleSvg>
+                </Styled.MainCenterPlaylistContentPlaylistTrackTitleImage>
+                <div>
+                  <Styled.MainCenterPlaylistContentPlaylistTrackTitleLink href="http://">
+                    Knives n Cherries{' '}
+                    <Styled.MainCenterPlaylistContentPlaylistTrackTitleSpan />
+                  </Styled.MainCenterPlaylistContentPlaylistTrackTitleLink>
                 </div>
-                <div className="track__title-text">
-                  <a className="track__title-link" href="http://">
-                    Knives n Cherries <span className="track__title-span" />
-                  </a>
-                </div>
-              </div>
-              <div className="track__author">
-                <a className="track__author-link" href="http://">
+              </Styled.MainCenterPlaylistContentPlaylistTrackTitle>
+              <Styled.MainCenterPlaylistContentPlaylistTrackAuthor>
+                <Styled.MainCenterPlaylistContentPlaylistTrackAuthorLink href="http://">
                   minthaze
-                </a>
-              </div>
-              <div className="track__album">
-                <a className="track__album-link" href="http://">
+                </Styled.MainCenterPlaylistContentPlaylistTrackAuthorLink>
+              </Styled.MainCenterPlaylistContentPlaylistTrackAuthor>
+              <Styled.MainCenterPlaylistContentPlaylistTrackAlbum>
+                <Styled.MainCenterPlaylistContentPlaylistTrackAlbumLink href="http://">
                   Captivating
-                </a>
-              </div>
-              <div className="track__time">
-                <svg className="track__time-svg" alt="time">
+                </Styled.MainCenterPlaylistContentPlaylistTrackAlbumLink>
+              </Styled.MainCenterPlaylistContentPlaylistTrackAlbum>
+              <div>
+                <Styled.MainCenterPlaylistContentPlaylistTrackTimeSvg alt="time">
                   <use xlinkHref="./img/icon/sprite.svg#icon-like" />
-                </svg>
-                <span className="track__time-text">1:48</span>
+                </Styled.MainCenterPlaylistContentPlaylistTrackTimeSvg>
+                <Styled.MainCenterPlaylistContentPlaylistTrackTimeSpan>
+                  1:48
+                </Styled.MainCenterPlaylistContentPlaylistTrackTimeSpan>
               </div>
-            </div>
-          </div>
+            </Styled.MainCenterPlaylistContentPlaylistTrack>
+          </Styled.MainCenterPlaylistContentPlaylistItem>
 
-          <div className="playlist__item">
-            <div className="playlist__track track">
-              <div className="track__title">
-                <div className="track__title-image">
-                  <svg className="track__title-svg" alt="music">
+          <Styled.MainCenterPlaylistContentPlaylistItem>
+            <Styled.MainCenterPlaylistContentPlaylistTrack>
+              <Styled.MainCenterPlaylistContentPlaylistTrackTitle>
+                <Styled.MainCenterPlaylistContentPlaylistTrackTitleImage>
+                  <Styled.MainCenterPlaylistContentPlaylistTrackTitleSvg alt="music">
                     <use xlinkHref="./img/icon/sprite.svg#icon-note" />
-                  </svg>
+                  </Styled.MainCenterPlaylistContentPlaylistTrackTitleSvg>
+                </Styled.MainCenterPlaylistContentPlaylistTrackTitleImage>
+                <div>
+                  <Styled.MainCenterPlaylistContentPlaylistTrackTitleLink href="http://">
+                    How Deep Is Your Love{' '}
+                    <Styled.MainCenterPlaylistContentPlaylistTrackTitleSpan />
+                  </Styled.MainCenterPlaylistContentPlaylistTrackTitleLink>
                 </div>
-                <div className="track__title-text">
-                  <a className="track__title-link" href="http://">
-                    How Deep Is Your Love <span className="track__title-span" />
-                  </a>
-                </div>
-              </div>
-              <div className="track__author">
-                <a className="track__author-link" href="http://">
+              </Styled.MainCenterPlaylistContentPlaylistTrackTitle>
+              <Styled.MainCenterPlaylistContentPlaylistTrackAuthor>
+                <Styled.MainCenterPlaylistContentPlaylistTrackAuthorLink href="http://">
                   Calvin Harris, Disciples
-                </a>
-              </div>
-              <div className="track__album">
-                <a className="track__album-link" href="http://">
+                </Styled.MainCenterPlaylistContentPlaylistTrackAuthorLink>
+              </Styled.MainCenterPlaylistContentPlaylistTrackAuthor>
+              <Styled.MainCenterPlaylistContentPlaylistTrackAlbum>
+                <Styled.MainCenterPlaylistContentPlaylistTrackAlbumLink href="http://">
                   How Deep Is Your Love
-                </a>
-              </div>
-              <div className="track__time">
-                <svg className="track__time-svg" alt="time">
+                </Styled.MainCenterPlaylistContentPlaylistTrackAlbumLink>
+              </Styled.MainCenterPlaylistContentPlaylistTrackAlbum>
+              <div>
+                <Styled.MainCenterPlaylistContentPlaylistTrackTimeSvg alt="time">
                   <use xlinkHref="./img/icon/sprite.svg#icon-like" />
-                </svg>
-                <span className="track__time-text">3:32</span>
+                </Styled.MainCenterPlaylistContentPlaylistTrackTimeSvg>
+                <Styled.MainCenterPlaylistContentPlaylistTrackTimeSpan>
+                  3:32
+                </Styled.MainCenterPlaylistContentPlaylistTrackTimeSpan>
               </div>
-            </div>
-          </div>
+            </Styled.MainCenterPlaylistContentPlaylistTrack>
+          </Styled.MainCenterPlaylistContentPlaylistItem>
 
-          <div className="playlist__item">
-            <div className="playlist__track track">
-              <div className="track__title">
-                <div className="track__title-image">
-                  <svg className="track__title-svg" alt="music">
+          <Styled.MainCenterPlaylistContentPlaylistItem>
+            <Styled.MainCenterPlaylistContentPlaylistTrack>
+              <Styled.MainCenterPlaylistContentPlaylistTrackTitle>
+                <Styled.MainCenterPlaylistContentPlaylistTrackTitleImage>
+                  <Styled.MainCenterPlaylistContentPlaylistTrackTitleSvg alt="music">
                     <use xlinkHref="./img/icon/sprite.svg#icon-note" />
-                  </svg>
+                  </Styled.MainCenterPlaylistContentPlaylistTrackTitleSvg>
+                </Styled.MainCenterPlaylistContentPlaylistTrackTitleImage>
+                <div>
+                  <Styled.MainCenterPlaylistContentPlaylistTrackTitleLink href="http://">
+                    Morena{' '}
+                    <Styled.MainCenterPlaylistContentPlaylistTrackTitleSpan />
+                  </Styled.MainCenterPlaylistContentPlaylistTrackTitleLink>
                 </div>
-                <div className="track__title-text">
-                  <a className="track__title-link" href="http://">
-                    Morena <span className="track__title-span" />
-                  </a>
-                </div>
-              </div>
-              <div className="track__author">
-                <a className="track__author-link" href="http://">
+              </Styled.MainCenterPlaylistContentPlaylistTrackTitle>
+              <Styled.MainCenterPlaylistContentPlaylistTrackAuthor>
+                <Styled.MainCenterPlaylistContentPlaylistTrackAuthorLink href="http://">
                   Tom Boxer
-                </a>
-              </div>
-              <div className="track__album">
-                <a className="track__album-link" href="http://">
+                </Styled.MainCenterPlaylistContentPlaylistTrackAuthorLink>
+              </Styled.MainCenterPlaylistContentPlaylistTrackAuthor>
+              <Styled.MainCenterPlaylistContentPlaylistTrackAlbum>
+                <Styled.MainCenterPlaylistContentPlaylistTrackAlbumLink href="http://">
                   Soundz Made in Romania
-                </a>
-              </div>
-              <div className="track__time">
-                <svg className="track__time-svg" alt="time">
+                </Styled.MainCenterPlaylistContentPlaylistTrackAlbumLink>
+              </Styled.MainCenterPlaylistContentPlaylistTrackAlbum>
+              <div>
+                <Styled.MainCenterPlaylistContentPlaylistTrackTimeSvg alt="time">
                   <use xlinkHref="./img/icon/sprite.svg#icon-like" />
-                </svg>
-                <span className="track__time-text">3:36</span>
+                </Styled.MainCenterPlaylistContentPlaylistTrackTimeSvg>
+                <Styled.MainCenterPlaylistContentPlaylistTrackTimeSpan>
+                  3:36
+                </Styled.MainCenterPlaylistContentPlaylistTrackTimeSpan>
               </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+            </Styled.MainCenterPlaylistContentPlaylistTrack>
+          </Styled.MainCenterPlaylistContentPlaylistItem>
+        </Styled.MainCenterPlaylistContentPlaylist>
+      </Styled.MainCenterBlockContent>
+    </Styled.MainCenterBlock>
   )
 }
 

@@ -64,14 +64,14 @@ export const SidebarList = styled.div`
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  div:not(:last-child) {
+    margin-bottom: 30px;
+  }
 `
 
 export const SidebarItem = styled.div`
   width: 250px;
   height: 150px;
-  div:not(:last-child) {
-    margin-bottom: 30px;
-  }
 `
 
 export const SidebarLink = styled.a`
