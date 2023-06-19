@@ -1,6 +1,6 @@
-import * as Styled from '../styles/stylesName'
+import * as Styled from '../../styles/stylesName'
 
-function LoadingName() {
+function Name() {
   return (
     <Styled.MainSidebar>
       <Styled.SidebarPersonal>
@@ -12,7 +12,7 @@ function LoadingName() {
           <Styled.SidebarItem>
             <Styled.SidebarLink href="/#">
               <Styled.SidebarImg
-                src="img/playlist-square.png"
+                src="img/playlist01.png"
                 alt="day's playlist"
               />
             </Styled.SidebarLink>
@@ -20,7 +20,7 @@ function LoadingName() {
           <Styled.SidebarItem>
             <Styled.SidebarLink href="/#">
               <Styled.SidebarImg
-                src="img/playlist-square.png"
+                src="img/playlist02.png"
                 alt="day's playlist"
               />
             </Styled.SidebarLink>
@@ -28,7 +28,7 @@ function LoadingName() {
           <Styled.SidebarItem>
             <Styled.SidebarLink href="/#">
               <Styled.SidebarImg
-                src="img/playlist-square.png"
+                src="img/playlist03.png"
                 alt="day's playlist"
               />
             </Styled.SidebarLink>
@@ -39,4 +39,4 @@ function LoadingName() {
   )
 }
 
-export default LoadingName
+export default Name

@@ -1,4 +1,4 @@
-import * as Styled from './styles/stylesPlayer'
+import * as Styled from '../../styles/stylesPlayer'
 
 function Player() {
   return (

@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import * as Styled from './styles/stylesBar'
+import * as Styled from '../../styles/stylesBar'
 
 function Bar() {
   const [isOpenedModal, setOpenedModal] = useState(false)
@@ -35,24 +35,24 @@ function Bar() {
           Искать по:
         </Styled.MainCenterBlockFilterTitle>
         <Styled.MainCenterBlockFilterButtonsBlock>
-        <Styled.MainCenterFilterButton
-          $mode={isOpenedModal === FILTERS.author ? 'active' : 'not_active'}
-          onClick={() => onButtonClick(FILTERS.author)}
-        >
-          исполнителю
-        </Styled.MainCenterFilterButton>
-        <Styled.MainCenterFilterButton
-          $mode={isOpenedModal === FILTERS.year ? 'active' : 'not_active'}
-          onClick={() => onButtonClick(FILTERS.year)}
-        >
-          году выпуска
-        </Styled.MainCenterFilterButton>
-        <Styled.MainCenterFilterButton
-          $mode={isOpenedModal === FILTERS.genre ? 'active' : 'not_active'}
-          onClick={() => onButtonClick(FILTERS.genre)}
-        >
-          жанру
-        </Styled.MainCenterFilterButton>
+          <Styled.MainCenterFilterButton
+            $mode={isOpenedModal === FILTERS.author ? 'active' : 'not_active'}
+            onClick={() => onButtonClick(FILTERS.author)}
+          >
+            исполнителю
+          </Styled.MainCenterFilterButton>
+          <Styled.MainCenterFilterButton
+            $mode={isOpenedModal === FILTERS.year ? 'active' : 'not_active'}
+            onClick={() => onButtonClick(FILTERS.year)}
+          >
+            году выпуска
+          </Styled.MainCenterFilterButton>
+          <Styled.MainCenterFilterButton
+            $mode={isOpenedModal === FILTERS.genre ? 'active' : 'not_active'}
+            onClick={() => onButtonClick(FILTERS.genre)}
+          >
+            жанру
+          </Styled.MainCenterFilterButton>
         </Styled.MainCenterBlockFilterButtonsBlock>
       </Styled.MainCenterBlockFilter>
       {isOpenedModal === FILTERS.author && (

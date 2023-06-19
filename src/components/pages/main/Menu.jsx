@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import * as Styled from './styles/stylesMenu'
+import * as Styled from '../../styles/stylesMenu'
 
 function Menu() {
   const [isVisible, setVisible] = useState(false)

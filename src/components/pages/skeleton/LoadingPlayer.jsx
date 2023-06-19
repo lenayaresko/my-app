@@ -1,4 +1,4 @@
-import * as Styled from '../styles/stylesPlayer'
+import * as Styled from '../../styles/stylesPlayer'
 
 function LoadingBar() {
   return (
