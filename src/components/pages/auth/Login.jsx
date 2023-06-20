@@ -1,12 +1,7 @@
 import { Link } from 'react-router-dom'
 import * as Styled from '../../styles/stylesLogin'
 
-export function Login() {
-  const MyLogin = (e) => {
-    e.preventDefault()
-    localStorage.setItem('token', '3434')
-    window.location.reload()
-  }
+export function Login(user, onAuthButtonClick) {
   return (
     <Styled.Container>
       <Styled.ContainerModalBox>
@@ -22,7 +17,7 @@ export function Login() {
         </Styled.InputBox>
         <Styled.ButtonBox>
           <Styled.LoginButtonBox>
-            <Styled.ButtonLogin onClick={(e) => MyLogin(e)}>
+            <Styled.ButtonLogin onClick={onAuthButtonClick}>
               Войти
             </Styled.ButtonLogin>
           </Styled.LoginButtonBox>
