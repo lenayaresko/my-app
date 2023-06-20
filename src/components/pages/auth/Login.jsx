@@ -1,7 +1,13 @@
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import * as Styled from '../../styles/stylesLogin'
 
-export function Login(user, onAuthButtonClick) {
+export function Login() {
+  const handleRegistrationButtonClick = (event) => {
+    event.preventDefault()
+    const navigate = useNavigate()
+    navigate('/')
+  }
+
   return (
     <Styled.Container>
       <Styled.ContainerModalBox>
@@ -17,7 +23,7 @@ export function Login(user, onAuthButtonClick) {
         </Styled.InputBox>
         <Styled.ButtonBox>
           <Styled.LoginButtonBox>
-            <Styled.ButtonLogin onClick={onAuthButtonClick}>
+            <Styled.ButtonLogin onClick={handleRegistrationButtonClick}>
               Войти
             </Styled.ButtonLogin>
           </Styled.LoginButtonBox>

@@ -1,7 +1,12 @@
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import * as Styled from '../../styles/stylesLogin'
 
-export function Login(user, onAuthButtonClick) {
+export function Registration() {
+  const handleRegistrationButtonClick = (event) => {
+    event.preventDefault()
+    const navigate = useNavigate()
+    navigate('/', { replace: true })
+  }
   return (
     <Styled.Container>
       <Styled.ContainerModalBox>
@@ -19,7 +24,9 @@ export function Login(user, onAuthButtonClick) {
         <Styled.ButtonBox>
           <Styled.SignupButtonBox>
             <Link to="/registration">
-              <Styled.ButtonSignup onClick={onAuthButtonClick}>
+              <Styled.ButtonSignup
+                onClick={handleRegistrationButtonClick}
+              >
                 Зарегистрироваться
               </Styled.ButtonSignup>
             </Link>
@@ -30,4 +37,4 @@ export function Login(user, onAuthButtonClick) {
   )
 }
 
-export default Login
+export default Registration

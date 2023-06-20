@@ -28,20 +28,11 @@ export function PageLogged() {
 }
 
 export function PageNotLogged() {
-  const [user, setUser] = useState(null)
-
-  const handleLogin = () => setUser({ login: 'taradam' })
-
-  const handleLogout = () => setUser(null)
-
   return (
     <Styled.Container id="root">
-      <Login
-        user={user}
-        onAuthButtonClick={user ? handleLogout : handleLogin}
-      />
+      <Login />
     </Styled.Container>
   )
 }
 
-export default PageLogged
+export default PageNotLogged
