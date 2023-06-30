@@ -7,34 +7,35 @@ function Player() {
         <Styled.PlayerBarProgress />
         <Styled.PlayerBarBlock>
           <Styled.PlayerBarPlayer>
-            <Styled.PlayerControls>
-              <Styled.PlayerButtonsPrev>
-                <Styled.PlayerButtonsPrevSvg alt="prev">
-                  <use xlinkHref="./img/icon/sprite.svg#icon-prev" />
-                </Styled.PlayerButtonsPrevSvg>
-              </Styled.PlayerButtonsPrev>
-              <Styled.PlayerButtonsPlay>
-                <Styled.PlayerButtonsPlaySvg alt="play">
-                  <use xlinkHref="./img/icon/sprite.svg#icon-play" />
-                </Styled.PlayerButtonsPlaySvg>
-              </Styled.PlayerButtonsPlay>
-              <Styled.PlayerButtonsNext>
-                <Styled.PlayerButtonsNextSvg alt="next">
-                  <use xlinkHref="./img/icon/sprite.svg#icon-next" />
-                </Styled.PlayerButtonsNextSvg>
-              </Styled.PlayerButtonsNext>
-              <Styled.PlayerButtonsRepeat>
-                <Styled.PlayerButtonsRepeatSvg alt="repeat">
-                  <use xlinkHref="./img/icon/sprite.svg#icon-repeat" />
-                </Styled.PlayerButtonsRepeatSvg>
-              </Styled.PlayerButtonsRepeat>
-              <Styled.PlayerButtonsShuffle>
-                <Styled.PlayerButtonsShuffleSvg alt="shuffle">
-                  <use xlinkHref="./img/icon/sprite.svg#icon-shuffle" />
-                </Styled.PlayerButtonsShuffleSvg>
-              </Styled.PlayerButtonsShuffle>
-            </Styled.PlayerControls>
-
+            <figure>
+              <Styled.PlayerControls>
+                <Styled.PlayerButtonsPrev>
+                  <Styled.PlayerButtonsPrevSvg alt="prev">
+                    <use xlinkHref="./img/icon/sprite.svg#icon-prev" />
+                  </Styled.PlayerButtonsPrevSvg>
+                </Styled.PlayerButtonsPrev>
+                <Styled.PlayerButtonsPlay>
+                  <Styled.PlayerButtonsPlaySvg alt="play">
+                    <use xlinkHref="./img/icon/sprite.svg#icon-play" />
+                  </Styled.PlayerButtonsPlaySvg>
+                </Styled.PlayerButtonsPlay>
+                <Styled.PlayerButtonsNext>
+                  <Styled.PlayerButtonsNextSvg alt="next">
+                    <use xlinkHref="./img/icon/sprite.svg#icon-next" />
+                  </Styled.PlayerButtonsNextSvg>
+                </Styled.PlayerButtonsNext>
+                <Styled.PlayerButtonsRepeat>
+                  <Styled.PlayerButtonsRepeatSvg alt="repeat">
+                    <use xlinkHref="./img/icon/sprite.svg#icon-repeat" />
+                  </Styled.PlayerButtonsRepeatSvg>
+                </Styled.PlayerButtonsRepeat>
+                <Styled.PlayerButtonsShuffle>
+                  <Styled.PlayerButtonsShuffleSvg alt="shuffle">
+                    <use xlinkHref="./img/icon/sprite.svg#icon-shuffle" />
+                  </Styled.PlayerButtonsShuffleSvg>
+                </Styled.PlayerButtonsShuffle>
+              </Styled.PlayerControls>
+            </figure>
             <Styled.PlayerTrackPlay>
               <Styled.PlayerTrackPlayContain>
                 <Styled.PlayerTrackPlayImage>
