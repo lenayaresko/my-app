@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { useState } from 'react'
 import * as Styled from '../../styles/stylesMenu'
 
@@ -6,7 +7,9 @@ function Menu() {
   return (
     <Styled.MainNav>
       <Styled.NavLogo>
-        <Styled.NavLogoImage src="./img/logo.png" alt="logo" />
+        <Link to="/">
+          <Styled.NavLogoImage src="./img/logo.png" alt="logo" />
+        </Link>
       </Styled.NavLogo>
       <Styled.NavBurger onClick={() => setVisible(!isVisible)}>
         <Styled.NavBurgerLine />
@@ -17,13 +20,19 @@ function Menu() {
         <Styled.NavMenu>
           <Styled.MenuList>
             <Styled.MenuItem>
-              <Styled.MenuLink href="http://">Главное</Styled.MenuLink>
+              <Link to="/">
+                <Styled.MenuLink>Главное</Styled.MenuLink>
+              </Link>
             </Styled.MenuItem>
             <Styled.MenuItem>
-              <Styled.MenuLink href="http://">Мой плейлист</Styled.MenuLink>
+              <Link to="/myplaylist">
+                <Styled.MenuLink>Мой плейлист</Styled.MenuLink>
+              </Link>
             </Styled.MenuItem>
             <Styled.MenuItem>
-              <Styled.MenuLink href="http://">Войти</Styled.MenuLink>
+              <Link to="/login">
+                <Styled.MenuLink>Войти</Styled.MenuLink>
+              </Link>
             </Styled.MenuItem>
           </Styled.MenuList>
         </Styled.NavMenu>
