@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import * as Styled from '../../styles/stylesPlayer'
 
 function Player() {
@@ -17,6 +17,18 @@ function Player() {
 
   const togglePlay = isPlaying ? handleStop : handleStart
 
+  const [seconds, setSeconds] = useState(0) // текущая позиция звука в секундах
+
+  const [volumes, setVolume] = useState(0.5) // текущая позиция громкости
+
+  useEffect(() => {
+    setInterval(() => {
+      if (isPlaying) {
+        setSeconds(audioRef.current.currentTime) // устанавливаем состояние с текущим значением в секундах
+      }
+    }, 1000)
+  })
+
   return (
     <>
       <Styled.HiddenAudio controls ref={audioRef}>
@@ -25,7 +37,16 @@ function Player() {
       </Styled.HiddenAudio>
       <Styled.PlayerBar>
         <Styled.PlayerBarContent>
-          <Styled.PlayerBarProgress />
+          <Styled.PlayerBarProgress
+            type="range"
+            min="0"
+            default="0"
+            value={seconds}
+            className="timeline"
+            onChange={(e) => {
+              setSeconds((audioRef.current.currentTime = e.target.value))
+            }}
+          />
           <Styled.PlayerBarBlock>
             <Styled.PlayerBarPlayer>
               <Styled.PlayerControls>
@@ -41,7 +62,7 @@ function Player() {
                     <use
                       xlinkHref={
                         isPlaying
-                          ? './img/icon/pause.svg'
+                          ? './img/icon/sprite.svg#icon-pause'
                           : './img/icon/sprite.svg#icon-play'
                       }
                     />
@@ -106,7 +127,14 @@ function Player() {
                 <Styled.PlayerButtonBarVolumeProgress>
                   <Styled.PlayerButtonBarVolumeProgressLine
                     type="range"
-                    name="range"
+                    min="0"
+                    step="0.1"
+                    max="1"
+                    value={volumes}
+                    onChange={(e) => {
+                      setVolume((audioRef.current.volume = e.target.value))
+                      console.log(volumes)
+                    }}
                   />
                 </Styled.PlayerButtonBarVolumeProgress>
               </Styled.PlayerButtonBarVolumeContent>
