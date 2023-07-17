@@ -1,11 +1,12 @@
-import { Link, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import * as Styled from '../../styles/stylesLogin'
 
 export function Registration() {
+  const navigate = useNavigate()
   const handleRegistrationButtonClick = (event) => {
     event.preventDefault()
-    const navigate = useNavigate()
-    navigate('/', { replace: true })
+    document.cookie = 'token=12345;'
+    navigate('/')
   }
   return (
     <Styled.Container>
@@ -23,13 +24,9 @@ export function Registration() {
         </Styled.InputBox>
         <Styled.ButtonBox>
           <Styled.SignupButtonBox>
-            <Link to="/registration">
-              <Styled.ButtonSignup
-                onClick={handleRegistrationButtonClick}
-              >
-                Зарегистрироваться
-              </Styled.ButtonSignup>
-            </Link>
+            <Styled.ButtonSignup onClick={handleRegistrationButtonClick}>
+              Зарегистрироваться
+            </Styled.ButtonSignup>
           </Styled.SignupButtonBox>
         </Styled.ButtonBox>
       </Styled.ContainerModalBox>

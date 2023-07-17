@@ -2,9 +2,10 @@ import { Link, useNavigate } from 'react-router-dom'
 import * as Styled from '../../styles/stylesLogin'
 
 export function Login() {
+  const navigate = useNavigate()
   const handleRegistrationButtonClick = (event) => {
+    document.cookie = 'token=12345;'
     event.preventDefault()
-    const navigate = useNavigate()
     navigate('/')
   }
 

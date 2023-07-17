@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import * as Styled from '../../styles/stylesName'
 
 function Name() {
@@ -10,28 +11,34 @@ function Name() {
       <Styled.SidebarBlock>
         <Styled.SidebarList>
           <Styled.SidebarItem>
-            <Styled.SidebarLink href="/#">
-              <Styled.SidebarImg
-                src="img/playlist01.png"
-                alt="day's playlist"
-              />
-            </Styled.SidebarLink>
+            <Link to="/dayplaylist">
+              <Styled.SidebarLink>
+                <Styled.SidebarImg
+                  src="img/playlist01.png"
+                  alt="day's playlist"
+                />
+              </Styled.SidebarLink>
+            </Link>
           </Styled.SidebarItem>
           <Styled.SidebarItem>
-            <Styled.SidebarLink href="/#">
-              <Styled.SidebarImg
-                src="img/playlist02.png"
-                alt="day's playlist"
-              />
-            </Styled.SidebarLink>
+            <Link to="/danceplaylist">
+              <Styled.SidebarLink>
+                <Styled.SidebarImg
+                  src="img/playlist02.png"
+                  alt="day's playlist"
+                />
+              </Styled.SidebarLink>
+            </Link>
           </Styled.SidebarItem>
           <Styled.SidebarItem>
-            <Styled.SidebarLink href="/#">
-              <Styled.SidebarImg
-                src="img/playlist03.png"
-                alt="day's playlist"
-              />
-            </Styled.SidebarLink>
+            <Link to="/indieplaylist">
+              <Styled.SidebarLink>
+                <Styled.SidebarImg
+                  src="img/playlist03.png"
+                  alt="day's playlist"
+                />
+              </Styled.SidebarLink>
+            </Link>
           </Styled.SidebarItem>
         </Styled.SidebarList>
       </Styled.SidebarBlock>

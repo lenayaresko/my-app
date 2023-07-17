@@ -1,5 +1,9 @@
 import styled from 'styled-components'
 
+export const HiddenAudio = styled.audio`
+  display: none;
+`
+
 export const PlayerBar = styled.div`
   position: fixed;
   bottom: 0;
@@ -16,9 +20,13 @@ export const PlayerBarContent = styled.div`
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
+  div:active input {
+    background-color: #a0276e;
+    color: #a0276e;
+  }
 `
 
-export const PlayerBarProgress = styled.div`
+export const PlayerBarProgress = styled.input`
   width: 100%;
   height: 5px;
   background: #2e2e2e;

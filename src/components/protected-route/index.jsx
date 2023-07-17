@@ -1,15 +1,12 @@
-import { Navigate } from 'react-router-dom'
+import { Navigate, Outlet } from 'react-router-dom'
 
-export function ProtectedRoute({
-  children,
-  redirectPath = '/login',
-  isAllowed,
-}) {
-  if (!isAllowed) {
+export function ProtectedRoute({ redirectPath = '/login' }) {
+  const isLogged = document.cookie.match('token')
+  if (!isLogged) {
     return <Navigate to={redirectPath} replace />
   }
 
-  return children
+  return <Outlet />
 }
 
 export default ProtectedRoute
