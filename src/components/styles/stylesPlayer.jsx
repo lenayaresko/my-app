@@ -1,5 +1,9 @@
 import styled from 'styled-components'
 
+export const HiddenAudio = styled.audio`
+  display: none;
+`
+
 export const PlayerBar = styled.div`
   position: fixed;
   bottom: 0;
