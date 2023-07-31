@@ -12,6 +12,7 @@ import BarMyPlaylist from './MyPlaylist'
 import LoadingName from '../skeleton/LoadingName'
 import LoadingPlayer from '../skeleton/LoadingPlayer'
 import { Login } from '../auth/Login'
+import { useThemeContext } from '../../styles/themes'
 
 export function PageLogged() {
   const [isLoading, setLoading] = useState(true)
@@ -19,9 +20,11 @@ export function PageLogged() {
     setTimeout(() => setLoading(false), 5000)
   }, [])
 
+  const { theme } = useThemeContext()
+
   return (
     <Styled.Container id="root">
-      <Styled.Main>
+      <Styled.Main style={{ backgroundColor: theme.background, color: theme }}>
         <Styled.GlobalStyle />
         <Menu />
         <Bar />

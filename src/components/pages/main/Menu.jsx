@@ -1,8 +1,11 @@
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
+import { useThemeContext } from '../../styles/themes'
 import * as Styled from '../../styles/stylesMenu'
 
 function Menu() {
+  const { toggleTheme } = useThemeContext()
+
   const [isVisible, setVisible] = useState(false)
   return (
     <Styled.MainNav>
@@ -33,6 +36,11 @@ function Menu() {
               <Link to="/login">
                 <Styled.MenuLink>Войти</Styled.MenuLink>
               </Link>
+            </Styled.MenuItem>
+            <Styled.MenuItem>
+              <button type="button" onClick={toggleTheme}>
+                <Styled.MenuLink>Сменить тему</Styled.MenuLink>
+              </button>
             </Styled.MenuItem>
           </Styled.MenuList>
         </Styled.NavMenu>
