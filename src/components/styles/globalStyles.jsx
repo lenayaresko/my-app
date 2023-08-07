@@ -58,7 +58,7 @@ export const Container = styled.div`
   height: 100vh;
   margin: 0 auto;
   position: relative;
-  background-color: #181818;
+  background-color: ${(props) => props.theme.background};
 `
 
 export const Bar = styled.div`
@@ -66,7 +66,7 @@ export const Bar = styled.div`
   bottom: 0;
   left: 0;
   width: 100%;
-  background: rgba(28, 28, 28, 0.5);
+  background: ${(props) => props.theme.background};
 `
 
 export default GlobalStyle

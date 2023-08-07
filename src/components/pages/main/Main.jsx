@@ -23,28 +23,31 @@ export function PageLogged() {
   const { theme } = useThemeContext()
 
   return (
-    <Styled.Container id="root">
+    <Styled.Container theme={theme} id="root">
       <Styled.Main style={{ backgroundColor: theme.background, color: theme }}>
         <Styled.GlobalStyle />
         <Menu />
         <Bar />
         {isLoading ? <LoadingName /> : <Name />}
       </Styled.Main>
-      <Styled.Bar>{isLoading ? <LoadingPlayer /> : <Player />}</Styled.Bar>
+      <Styled.Bar theme={theme}>
+        {isLoading ? <LoadingPlayer /> : <Player />}
+      </Styled.Bar>
     </Styled.Container>
   )
 }
 
 export function PageDayPlaylist() {
+  const { theme } = useThemeContext()
   return (
-    <Styled.Container id="root">
+    <Styled.Container theme={theme} id="root">
       <Styled.Main>
         <Styled.GlobalStyle />
         <Menu />
         <BarDayPlaylist />
         <Name />
       </Styled.Main>
-      <Styled.Bar>
+      <Styled.Bar theme={theme}>
         <Player />
       </Styled.Bar>
     </Styled.Container>
@@ -52,15 +55,16 @@ export function PageDayPlaylist() {
 }
 
 export function PageDancePlaylist() {
+  const { theme } = useThemeContext()
   return (
-    <Styled.Container id="root">
+    <Styled.Container theme={theme} id="root">
       <Styled.Main>
         <Styled.GlobalStyle />
         <Menu />
         <BarDancePlaylist />
         <Name />
       </Styled.Main>
-      <Styled.Bar>
+      <Styled.Bar theme={theme}>
         <Player />
       </Styled.Bar>
     </Styled.Container>
@@ -68,15 +72,16 @@ export function PageDancePlaylist() {
 }
 
 export function PageIndiePlaylist() {
+  const { theme } = useThemeContext()
   return (
-    <Styled.Container id="root">
+    <Styled.Container theme={theme} id="root">
       <Styled.Main>
         <Styled.GlobalStyle />
         <Menu />
         <BarIndiePlaylist />
         <Name />
       </Styled.Main>
-      <Styled.Bar>
+      <Styled.Bar theme={theme}>
         <Player />
       </Styled.Bar>
     </Styled.Container>
@@ -84,15 +89,16 @@ export function PageIndiePlaylist() {
 }
 
 export function PageMyPlaylist() {
+  const { theme } = useThemeContext()
   return (
-    <Styled.Container id="root">
+    <Styled.Container theme={theme} id="root">
       <Styled.Main>
         <Styled.GlobalStyle />
         <Menu />
         <BarMyPlaylist />
         <Name />
       </Styled.Main>
-      <Styled.Bar>
+      <Styled.Bar theme={theme}>
         <Player />
       </Styled.Bar>
     </Styled.Container>

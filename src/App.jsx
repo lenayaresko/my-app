@@ -10,6 +10,7 @@ function App() {
   const toggleTheme = () => {
     if (currentTheme === themes.dark) {
       setCurrentTheme(themes.light)
+      return
     }
 
     setCurrentTheme(themes.dark)

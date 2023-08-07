@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const MainSidebar = styled.div`
   max-width: 418px;
   padding: 0px 90px 0px 78px;
-  background-color: #181818;
+  background-color: ${(props) => props.theme.background};
 `
 
 export const SidebarPersonal = styled.div`
@@ -28,15 +28,16 @@ export const SidebarPersonalName = styled.p`
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
-  color: #ffffff;
+  color: ${(props) => props.theme.color};
   margin-right: 16px;
 `
 
-export const SidebarAvatar = styled.div`
+export const SidebarAvatar = styled.svg`
   width: 43px;
   height: 43px;
-  background-color: #313131;
-  border-radius: 50%;
+  stroke: #ffffff;
+  fill: transparent;
+  cursor: pointer;
 `
 
 export const SidebarBlock = styled.div`

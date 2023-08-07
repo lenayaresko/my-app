@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import * as Styled from '../../styles/stylesBar'
+import { useThemeContext } from '../../styles/themes'
 
 function Bar() {
   const [isOpenedModal, setOpenedModal] = useState(false)
@@ -17,11 +18,13 @@ function Bar() {
     setOpenedModal(modalName)
   }
 
+  const { theme } = useThemeContext()
+
   return (
-    <Styled.MainCenterBlock>
+    <Styled.MainCenterBlock theme={theme}>
       <Styled.MainCenterBlockSearch>
         <Styled.MainCenterBlockSearchSvg>
-          <use xlinkHref="./img/icon/sprite.svg#icon-search" />
+          <use xlinkHref={theme.search} />
         </Styled.MainCenterBlockSearchSvg>
         <Styled.MainCenterBlockSearchText
           type="search"
@@ -29,25 +32,28 @@ function Bar() {
           name="search"
         />
       </Styled.MainCenterBlockSearch>
-      <Styled.MainCenterBlockH2>Треки</Styled.MainCenterBlockH2>
+      <Styled.MainCenterBlockH2 theme={theme}>Треки</Styled.MainCenterBlockH2>
       <Styled.MainCenterBlockFilter>
-        <Styled.MainCenterBlockFilterTitle>
+        <Styled.MainCenterBlockFilterTitle theme={theme}>
           Искать по:
         </Styled.MainCenterBlockFilterTitle>
         <Styled.MainCenterBlockFilterButtonsBlock>
           <Styled.MainCenterFilterButton
+            theme={theme}
             $mode={isOpenedModal === FILTERS.author ? 'active' : 'not_active'}
             onClick={() => onButtonClick(FILTERS.author)}
           >
             исполнителю
           </Styled.MainCenterFilterButton>
           <Styled.MainCenterFilterButton
+            theme={theme}
             $mode={isOpenedModal === FILTERS.year ? 'active' : 'not_active'}
             onClick={() => onButtonClick(FILTERS.year)}
           >
             году выпуска
           </Styled.MainCenterFilterButton>
           <Styled.MainCenterFilterButton
+            theme={theme}
             $mode={isOpenedModal === FILTERS.genre ? 'active' : 'not_active'}
             onClick={() => onButtonClick(FILTERS.genre)}
           >
@@ -98,20 +104,28 @@ function Bar() {
           <Styled.MainCenterPlaylistContentPlaylistItem>
             <Styled.MainCenterPlaylistContentPlaylistTrack>
               <Styled.MainCenterPlaylistContentPlaylistTrackTitle>
-                <Styled.MainCenterPlaylistContentPlaylistTrackTitleImage>
+                <Styled.MainCenterPlaylistContentPlaylistTrackTitleImage
+                  theme={theme}
+                >
                   <Styled.MainCenterPlaylistContentPlaylistTrackTitleSvg alt="music">
                     <use xlinkHref="./img/icon/sprite.svg#icon-note" />
                   </Styled.MainCenterPlaylistContentPlaylistTrackTitleSvg>
                 </Styled.MainCenterPlaylistContentPlaylistTrackTitleImage>
                 <div>
-                  <Styled.MainCenterPlaylistContentPlaylistTrackTitleLink href="http://">
+                  <Styled.MainCenterPlaylistContentPlaylistTrackTitleLink
+                    theme={theme}
+                    href="http://"
+                  >
                     Guilt{' '}
                     <Styled.MainCenterPlaylistContentPlaylistTrackTitleSpan />
                   </Styled.MainCenterPlaylistContentPlaylistTrackTitleLink>
                 </div>
               </Styled.MainCenterPlaylistContentPlaylistTrackTitle>
               <Styled.MainCenterPlaylistContentPlaylistTrackAuthor>
-                <Styled.MainCenterPlaylistContentPlaylistTrackAuthorLink href="http://">
+                <Styled.MainCenterPlaylistContentPlaylistTrackAuthorLink
+                  theme={theme}
+                  href="http://"
+                >
                   Nero
                 </Styled.MainCenterPlaylistContentPlaylistTrackAuthorLink>
               </Styled.MainCenterPlaylistContentPlaylistTrackAuthor>
@@ -134,20 +148,28 @@ function Bar() {
           <Styled.MainCenterPlaylistContentPlaylistItem>
             <Styled.MainCenterPlaylistContentPlaylistTrack>
               <Styled.MainCenterPlaylistContentPlaylistTrackTitle>
-                <Styled.MainCenterPlaylistContentPlaylistTrackTitleImage>
+                <Styled.MainCenterPlaylistContentPlaylistTrackTitleImage
+                  theme={theme}
+                >
                   <Styled.MainCenterPlaylistContentPlaylistTrackTitleSvg alt="music">
                     <use xlinkHref="./img/icon/sprite.svg#icon-note" />
                   </Styled.MainCenterPlaylistContentPlaylistTrackTitleSvg>
                 </Styled.MainCenterPlaylistContentPlaylistTrackTitleImage>
                 <div>
-                  <Styled.MainCenterPlaylistContentPlaylistTrackTitleLink href="http://">
+                  <Styled.MainCenterPlaylistContentPlaylistTrackTitleLink
+                    theme={theme}
+                    href="http://"
+                  >
                     Elektro{' '}
                     <Styled.MainCenterPlaylistContentPlaylistTrackTitleSpan />
                   </Styled.MainCenterPlaylistContentPlaylistTrackTitleLink>
                 </div>
               </Styled.MainCenterPlaylistContentPlaylistTrackTitle>
               <Styled.MainCenterPlaylistContentPlaylistTrackAuthor>
-                <Styled.MainCenterPlaylistContentPlaylistTrackAuthorLink href="http://">
+                <Styled.MainCenterPlaylistContentPlaylistTrackAuthorLink
+                  theme={theme}
+                  href="http://"
+                >
                   Dynoro, Outwork, Mr. Gee
                 </Styled.MainCenterPlaylistContentPlaylistTrackAuthorLink>
               </Styled.MainCenterPlaylistContentPlaylistTrackAuthor>
@@ -170,20 +192,28 @@ function Bar() {
           <Styled.MainCenterPlaylistContentPlaylistItem>
             <Styled.MainCenterPlaylistContentPlaylistTrack>
               <Styled.MainCenterPlaylistContentPlaylistTrackTitle>
-                <Styled.MainCenterPlaylistContentPlaylistTrackTitleImage>
+                <Styled.MainCenterPlaylistContentPlaylistTrackTitleImage
+                  theme={theme}
+                >
                   <Styled.MainCenterPlaylistContentPlaylistTrackTitleSvg alt="music">
                     <use xlinkHref="./img/icon/sprite.svg#icon-note" />
                   </Styled.MainCenterPlaylistContentPlaylistTrackTitleSvg>
                 </Styled.MainCenterPlaylistContentPlaylistTrackTitleImage>
                 <div>
-                  <Styled.MainCenterPlaylistContentPlaylistTrackTitleLink href="http://">
+                  <Styled.MainCenterPlaylistContentPlaylistTrackTitleLink
+                    theme={theme}
+                    href="http://"
+                  >
                     I’m Fire{' '}
                     <Styled.MainCenterPlaylistContentPlaylistTrackTitleSpan />
                   </Styled.MainCenterPlaylistContentPlaylistTrackTitleLink>
                 </div>
               </Styled.MainCenterPlaylistContentPlaylistTrackTitle>
               <Styled.MainCenterPlaylistContentPlaylistTrackAuthor>
-                <Styled.MainCenterPlaylistContentPlaylistTrackAuthorLink href="http://">
+                <Styled.MainCenterPlaylistContentPlaylistTrackAuthorLink
+                  theme={theme}
+                  href="http://"
+                >
                   Ali Bakgor
                 </Styled.MainCenterPlaylistContentPlaylistTrackAuthorLink>
               </Styled.MainCenterPlaylistContentPlaylistTrackAuthor>
@@ -206,13 +236,18 @@ function Bar() {
           <Styled.MainCenterPlaylistContentPlaylistItem>
             <Styled.MainCenterPlaylistContentPlaylistTrack>
               <Styled.MainCenterPlaylistContentPlaylistTrackTitle>
-                <Styled.MainCenterPlaylistContentPlaylistTrackTitleImage>
+                <Styled.MainCenterPlaylistContentPlaylistTrackTitleImage
+                  theme={theme}
+                >
                   <Styled.MainCenterPlaylistContentPlaylistTrackTitleSvg alt="music">
                     <use xlinkHref="./img/icon/sprite.svg#icon-note" />
                   </Styled.MainCenterPlaylistContentPlaylistTrackTitleSvg>
                 </Styled.MainCenterPlaylistContentPlaylistTrackTitleImage>
                 <div>
-                  <Styled.MainCenterPlaylistContentPlaylistTrackTitleLink href="http://">
+                  <Styled.MainCenterPlaylistContentPlaylistTrackTitleLink
+                    theme={theme}
+                    href="http://"
+                  >
                     Non Stop{' '}
                     <Styled.MainCenterPlaylistContentPlaylistTrackTitleSpan>
                       (Remix)
@@ -221,7 +256,10 @@ function Bar() {
                 </div>
               </Styled.MainCenterPlaylistContentPlaylistTrackTitle>
               <Styled.MainCenterPlaylistContentPlaylistTrackAuthor>
-                <Styled.MainCenterPlaylistContentPlaylistTrackAuthorLink href="http://">
+                <Styled.MainCenterPlaylistContentPlaylistTrackAuthorLink
+                  theme={theme}
+                  href="http://"
+                >
                   Стоункат, Psychopath
                 </Styled.MainCenterPlaylistContentPlaylistTrackAuthorLink>
               </Styled.MainCenterPlaylistContentPlaylistTrackAuthor>
@@ -244,13 +282,18 @@ function Bar() {
           <Styled.MainCenterPlaylistContentPlaylistItem>
             <Styled.MainCenterPlaylistContentPlaylistTrack>
               <Styled.MainCenterPlaylistContentPlaylistTrackTitle>
-                <Styled.MainCenterPlaylistContentPlaylistTrackTitleImage>
+                <Styled.MainCenterPlaylistContentPlaylistTrackTitleImage
+                  theme={theme}
+                >
                   <Styled.MainCenterPlaylistContentPlaylistTrackTitleSvg alt="music">
                     <use xlinkHref="./img/icon/sprite.svg#icon-note" />
                   </Styled.MainCenterPlaylistContentPlaylistTrackTitleSvg>
                 </Styled.MainCenterPlaylistContentPlaylistTrackTitleImage>
                 <div>
-                  <Styled.MainCenterPlaylistContentPlaylistTrackTitleLink href="http://">
+                  <Styled.MainCenterPlaylistContentPlaylistTrackTitleLink
+                    theme={theme}
+                    href="http://"
+                  >
                     Run Run{' '}
                     <Styled.MainCenterPlaylistContentPlaylistTrackTitleSpan>
                       (feat. AR/CO)
@@ -259,7 +302,10 @@ function Bar() {
                 </div>
               </Styled.MainCenterPlaylistContentPlaylistTrackTitle>
               <Styled.MainCenterPlaylistContentPlaylistTrackAuthor>
-                <Styled.MainCenterPlaylistContentPlaylistTrackAuthorLink href="http://">
+                <Styled.MainCenterPlaylistContentPlaylistTrackAuthorLink
+                  theme={theme}
+                  href="http://"
+                >
                   Jaded, Will Clarke, AR/CO
                 </Styled.MainCenterPlaylistContentPlaylistTrackAuthorLink>
               </Styled.MainCenterPlaylistContentPlaylistTrackAuthor>
@@ -282,13 +328,18 @@ function Bar() {
           <Styled.MainCenterPlaylistContentPlaylistItem>
             <Styled.MainCenterPlaylistContentPlaylistTrack>
               <Styled.MainCenterPlaylistContentPlaylistTrackTitle>
-                <Styled.MainCenterPlaylistContentPlaylistTrackTitleImage>
+                <Styled.MainCenterPlaylistContentPlaylistTrackTitleImage
+                  theme={theme}
+                >
                   <Styled.MainCenterPlaylistContentPlaylistTrackTitleSvg alt="music">
                     <use xlinkHref="./img/icon/sprite.svg#icon-note" />
                   </Styled.MainCenterPlaylistContentPlaylistTrackTitleSvg>
                 </Styled.MainCenterPlaylistContentPlaylistTrackTitleImage>
                 <div>
-                  <Styled.MainCenterPlaylistContentPlaylistTrackTitleLink href="http://">
+                  <Styled.MainCenterPlaylistContentPlaylistTrackTitleLink
+                    theme={theme}
+                    href="http://"
+                  >
                     Eyes on Fire{' '}
                     <Styled.MainCenterPlaylistContentPlaylistTrackTitleSpan>
                       (Zeds Dead Remix)
@@ -297,7 +348,10 @@ function Bar() {
                 </div>
               </Styled.MainCenterPlaylistContentPlaylistTrackTitle>
               <Styled.MainCenterPlaylistContentPlaylistTrackAuthor>
-                <Styled.MainCenterPlaylistContentPlaylistTrackAuthorLink href="http://">
+                <Styled.MainCenterPlaylistContentPlaylistTrackAuthorLink
+                  theme={theme}
+                  href="http://"
+                >
                   Blue Foundation, Zeds Dead
                 </Styled.MainCenterPlaylistContentPlaylistTrackAuthorLink>
               </Styled.MainCenterPlaylistContentPlaylistTrackAuthor>
@@ -320,13 +374,18 @@ function Bar() {
           <Styled.MainCenterPlaylistContentPlaylistItem>
             <Styled.MainCenterPlaylistContentPlaylistTrack>
               <Styled.MainCenterPlaylistContentPlaylistTrackTitle>
-                <Styled.MainCenterPlaylistContentPlaylistTrackTitleImage>
+                <Styled.MainCenterPlaylistContentPlaylistTrackTitleImage
+                  theme={theme}
+                >
                   <Styled.MainCenterPlaylistContentPlaylistTrackTitleSvg alt="music">
                     <use xlinkHref="./img/icon/sprite.svg#icon-note" />
                   </Styled.MainCenterPlaylistContentPlaylistTrackTitleSvg>
                 </Styled.MainCenterPlaylistContentPlaylistTrackTitleImage>
                 <div>
-                  <Styled.MainCenterPlaylistContentPlaylistTrackTitleLink href="http://">
+                  <Styled.MainCenterPlaylistContentPlaylistTrackTitleLink
+                    theme={theme}
+                    href="http://"
+                  >
                     Mucho Bien{' '}
                     <Styled.MainCenterPlaylistContentPlaylistTrackTitleSpan>
                       (Hi Profile Remix)
@@ -335,7 +394,10 @@ function Bar() {
                 </div>
               </Styled.MainCenterPlaylistContentPlaylistTrackTitle>
               <Styled.MainCenterPlaylistContentPlaylistTrackAuthor>
-                <Styled.MainCenterPlaylistContentPlaylistTrackAuthorLink href="http://">
+                <Styled.MainCenterPlaylistContentPlaylistTrackAuthorLink
+                  theme={theme}
+                  href="http://"
+                >
                   HYBIT, Mr. Black, Offer Nissim, Hi Profile
                 </Styled.MainCenterPlaylistContentPlaylistTrackAuthorLink>
               </Styled.MainCenterPlaylistContentPlaylistTrackAuthor>
@@ -358,20 +420,28 @@ function Bar() {
           <Styled.MainCenterPlaylistContentPlaylistItem>
             <Styled.MainCenterPlaylistContentPlaylistTrack>
               <Styled.MainCenterPlaylistContentPlaylistTrackTitle>
-                <Styled.MainCenterPlaylistContentPlaylistTrackTitleImage>
+                <Styled.MainCenterPlaylistContentPlaylistTrackTitleImage
+                  theme={theme}
+                >
                   <Styled.MainCenterPlaylistContentPlaylistTrackTitleSvg alt="music">
                     <use xlinkHref="./img/icon/sprite.svg#icon-note" />
                   </Styled.MainCenterPlaylistContentPlaylistTrackTitleSvg>
                 </Styled.MainCenterPlaylistContentPlaylistTrackTitleImage>
                 <div>
-                  <Styled.MainCenterPlaylistContentPlaylistTrackTitleLink href="http://">
+                  <Styled.MainCenterPlaylistContentPlaylistTrackTitleLink
+                    theme={theme}
+                    href="http://"
+                  >
                     Knives n Cherries{' '}
                     <Styled.MainCenterPlaylistContentPlaylistTrackTitleSpan />
                   </Styled.MainCenterPlaylistContentPlaylistTrackTitleLink>
                 </div>
               </Styled.MainCenterPlaylistContentPlaylistTrackTitle>
               <Styled.MainCenterPlaylistContentPlaylistTrackAuthor>
-                <Styled.MainCenterPlaylistContentPlaylistTrackAuthorLink href="http://">
+                <Styled.MainCenterPlaylistContentPlaylistTrackAuthorLink
+                  theme={theme}
+                  href="http://"
+                >
                   minthaze
                 </Styled.MainCenterPlaylistContentPlaylistTrackAuthorLink>
               </Styled.MainCenterPlaylistContentPlaylistTrackAuthor>
@@ -394,20 +464,28 @@ function Bar() {
           <Styled.MainCenterPlaylistContentPlaylistItem>
             <Styled.MainCenterPlaylistContentPlaylistTrack>
               <Styled.MainCenterPlaylistContentPlaylistTrackTitle>
-                <Styled.MainCenterPlaylistContentPlaylistTrackTitleImage>
+                <Styled.MainCenterPlaylistContentPlaylistTrackTitleImage
+                  theme={theme}
+                >
                   <Styled.MainCenterPlaylistContentPlaylistTrackTitleSvg alt="music">
                     <use xlinkHref="./img/icon/sprite.svg#icon-note" />
                   </Styled.MainCenterPlaylistContentPlaylistTrackTitleSvg>
                 </Styled.MainCenterPlaylistContentPlaylistTrackTitleImage>
                 <div>
-                  <Styled.MainCenterPlaylistContentPlaylistTrackTitleLink href="http://">
+                  <Styled.MainCenterPlaylistContentPlaylistTrackTitleLink
+                    theme={theme}
+                    href="http://"
+                  >
                     How Deep Is Your Love{' '}
                     <Styled.MainCenterPlaylistContentPlaylistTrackTitleSpan />
                   </Styled.MainCenterPlaylistContentPlaylistTrackTitleLink>
                 </div>
               </Styled.MainCenterPlaylistContentPlaylistTrackTitle>
               <Styled.MainCenterPlaylistContentPlaylistTrackAuthor>
-                <Styled.MainCenterPlaylistContentPlaylistTrackAuthorLink href="http://">
+                <Styled.MainCenterPlaylistContentPlaylistTrackAuthorLink
+                  theme={theme}
+                  href="http://"
+                >
                   Calvin Harris, Disciples
                 </Styled.MainCenterPlaylistContentPlaylistTrackAuthorLink>
               </Styled.MainCenterPlaylistContentPlaylistTrackAuthor>
@@ -430,20 +508,28 @@ function Bar() {
           <Styled.MainCenterPlaylistContentPlaylistItem>
             <Styled.MainCenterPlaylistContentPlaylistTrack>
               <Styled.MainCenterPlaylistContentPlaylistTrackTitle>
-                <Styled.MainCenterPlaylistContentPlaylistTrackTitleImage>
+                <Styled.MainCenterPlaylistContentPlaylistTrackTitleImage
+                  theme={theme}
+                >
                   <Styled.MainCenterPlaylistContentPlaylistTrackTitleSvg alt="music">
                     <use xlinkHref="./img/icon/sprite.svg#icon-note" />
                   </Styled.MainCenterPlaylistContentPlaylistTrackTitleSvg>
                 </Styled.MainCenterPlaylistContentPlaylistTrackTitleImage>
                 <div>
-                  <Styled.MainCenterPlaylistContentPlaylistTrackTitleLink href="http://">
+                  <Styled.MainCenterPlaylistContentPlaylistTrackTitleLink
+                    theme={theme}
+                    href="http://"
+                  >
                     Morena{' '}
                     <Styled.MainCenterPlaylistContentPlaylistTrackTitleSpan />
                   </Styled.MainCenterPlaylistContentPlaylistTrackTitleLink>
                 </div>
               </Styled.MainCenterPlaylistContentPlaylistTrackTitle>
               <Styled.MainCenterPlaylistContentPlaylistTrackAuthor>
-                <Styled.MainCenterPlaylistContentPlaylistTrackAuthorLink href="http://">
+                <Styled.MainCenterPlaylistContentPlaylistTrackAuthorLink
+                  theme={theme}
+                  href="http://"
+                >
                   Tom Boxer
                 </Styled.MainCenterPlaylistContentPlaylistTrackAuthorLink>
               </Styled.MainCenterPlaylistContentPlaylistTrackAuthor>

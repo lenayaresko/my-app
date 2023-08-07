@@ -2,11 +2,12 @@ import styled from 'styled-components'
 
 export const MainCenterBlock = styled.div`
   padding-bottom: 80px;
+  padding-left: 50px;
   width: auto;
   -webkit-box-flex: 3;
   -ms-flex-positive: 3;
   flex-grow: 3;
-  background-color: #181818;
+  background-color: ${(props) => props.theme.background};
 `
 
 export const MainCenterBlockSearch = styled.div`
@@ -30,6 +31,7 @@ export const MainCenterBlockSearch = styled.div`
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
+    font-family: 'StratosSkyeng', sans-serif;
   }
   div:-ms-input-placeholder {
     background-color: transparent;
@@ -38,6 +40,7 @@ export const MainCenterBlockSearch = styled.div`
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
+    font-family: 'StratosSkyeng', sans-serif;
   }
   div::-ms-input-placeholder {
     background-color: transparent;
@@ -46,6 +49,7 @@ export const MainCenterBlockSearch = styled.div`
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
+    font-family: 'StratosSkyeng', sans-serif;
   }
   div::placeholder {
     background-color: transparent;
@@ -54,6 +58,7 @@ export const MainCenterBlockSearch = styled.div`
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
+    font-family: 'StratosSkyeng', sans-serif;
   }
 `
 
@@ -86,6 +91,7 @@ export const MainCenterBlockH2 = styled.h2`
   line-height: 72px;
   letter-spacing: -0.8px;
   margin-bottom: 45px;
+  color: ${(props) => props.theme.color};
 `
 
 export const MainCenterBlockFilterButtonsBlock = styled.div`
@@ -122,6 +128,7 @@ export const MainCenterBlockFilterTitle = styled.div`
   font-size: 16px;
   line-height: 24px;
   margin-right: 15px;
+  color: ${(props) => props.theme.color};
 `
 export const MainCenterBlockModalWindowArtist = styled.div`
   width: 248px;
@@ -257,7 +264,7 @@ export const MainCenterPlaylistContentPlaylistTrackTitleImage = styled.div`
   width: 51px;
   height: 51px;
   padding: 16px;
-  background: #313131;
+  background: ${(props) => props.theme.trackIconBg};
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -280,7 +287,7 @@ export const MainCenterPlaylistContentPlaylistTrackTitleLink = styled.a`
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
-  color: #ffffff;
+  color: ${(props) => props.theme.color};
 `
 export const MainCenterPlaylistContentPlaylistTrackAuthor = styled.div`
   width: 341px;
@@ -296,7 +303,7 @@ export const MainCenterPlaylistContentPlaylistTrackAuthorLink = styled.a`
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
-  color: #ffffff;
+  color: ${(props) => props.theme.color};
   text-align: left;
 `
 export const MainCenterPlaylistContentPlaylistTrackAlbum = styled.div`
@@ -321,7 +328,6 @@ export const MainCenterPlaylistContentPlaylistTrackTitleSpan = styled.span`
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
-  color: #4e4e4e;
 `
 export const MainCenterPlaylistContentPlaylistTrackTimeSpan = styled.span`
   font-style: normal;
@@ -354,10 +360,11 @@ export const MainCenterFilterButton = styled.div`
           font-weight: 400;
           font-size: 16px;
           line-height: 24px;
-          border: 1px solid #ffffff;
+          border: 1px solid ${props.theme.color};
           border-radius: 60px;
           padding: 6px 20px;
           cursor: pointer;
+          color: ${props.theme.color}
         `
     }
   }}
