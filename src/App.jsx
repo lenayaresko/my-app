@@ -1,5 +1,4 @@
 /* eslint-disable react/jsx-no-constructed-context-values */
-
 import { useState } from 'react'
 import { AppRoutes } from './routs'
 import { ThemeContext, themes } from './components/styles/themes'
