@@ -1,7 +1,9 @@
 import { useState, useRef, useEffect } from 'react'
 import * as Styled from '../../styles/stylesPlayer'
+import { useThemeContext } from '../../styles/themes'
 
 function Player() {
+  const { theme } = useThemeContext()
   const [isPlaying, setIsPlaying] = useState(false)
   const audioRef = useRef(null)
 
@@ -35,7 +37,7 @@ function Player() {
         <source src="/Bobby_Marleni_-_Dropin.mp3" type="audio/mpeg" />
         <track kind="captions" srcLang="ru" />
       </Styled.HiddenAudio>
-      <Styled.PlayerBar>
+      <Styled.PlayerBar theme={theme}>
         <Styled.PlayerBarContent>
           <Styled.PlayerBarProgress
             type="range"
@@ -86,18 +88,24 @@ function Player() {
               </Styled.PlayerControls>
               <Styled.PlayerTrackPlay>
                 <Styled.PlayerTrackPlayContain>
-                  <Styled.PlayerTrackPlayImage>
+                  <Styled.PlayerTrackPlayImage theme={theme}>
                     <Styled.PlayerTrackPlaySvg alt="music">
                       <use xlinkHref="./img/icon/sprite.svg#icon-note" />
                     </Styled.PlayerTrackPlaySvg>
                   </Styled.PlayerTrackPlayImage>
                   <Styled.PlayerTrackPlayAuthor>
-                    <Styled.PlayerTrackPlayAuthorLink href="http://">
+                    <Styled.PlayerTrackPlayAuthorLink
+                      theme={theme}
+                      href="http://"
+                    >
                       Ты та...
                     </Styled.PlayerTrackPlayAuthorLink>
                   </Styled.PlayerTrackPlayAuthor>
                   <Styled.PlayerTrackPlayAlbum>
-                    <Styled.PlayerTrackPlayAlbumLink href="http://">
+                    <Styled.PlayerTrackPlayAlbumLink
+                      theme={theme}
+                      href="http://"
+                    >
                       Баста
                     </Styled.PlayerTrackPlayAlbumLink>
                   </Styled.PlayerTrackPlayAlbum>
@@ -133,7 +141,6 @@ function Player() {
                     value={volumes}
                     onChange={(e) => {
                       setVolume((audioRef.current.volume = e.target.value))
-                      console.log(volumes)
                     }}
                   />
                 </Styled.PlayerButtonBarVolumeProgress>

@@ -1,11 +1,13 @@
 import * as Styled from '../../styles/stylesBar'
+import { useThemeContext } from '../../styles/themes'
 
 export function BarDayPlaylist() {
+  const { theme } = useThemeContext()
   return (
     <Styled.MainCenterBlock>
       <Styled.MainCenterBlockSearch>
         <Styled.MainCenterBlockSearchSvg>
-          <use xlinkHref="./img/icon/sprite.svg#icon-search" />
+        <use xlinkHref={theme.search} />
         </Styled.MainCenterBlockSearchSvg>
         <Styled.MainCenterBlockSearchText
           type="search"
@@ -13,7 +15,7 @@ export function BarDayPlaylist() {
           name="search"
         />
       </Styled.MainCenterBlockSearch>
-      <Styled.MainCenterBlockH2>Плейлист дня</Styled.MainCenterBlockH2>
+      <Styled.MainCenterBlockH2 theme={theme}>Плейлист дня</Styled.MainCenterBlockH2>
 
       <Styled.MainCenterBlockContent>
         <Styled.MainCenterBlockContentTitle>
@@ -42,14 +44,14 @@ export function BarDayPlaylist() {
                   </Styled.MainCenterPlaylistContentPlaylistTrackTitleSvg>
                 </Styled.MainCenterPlaylistContentPlaylistTrackTitleImage>
                 <div>
-                  <Styled.MainCenterPlaylistContentPlaylistTrackTitleLink href="http://">
+                  <Styled.MainCenterPlaylistContentPlaylistTrackTitleLink theme={theme} href="http://">
                     Guilt{' '}
                     <Styled.MainCenterPlaylistContentPlaylistTrackTitleSpan />
                   </Styled.MainCenterPlaylistContentPlaylistTrackTitleLink>
                 </div>
               </Styled.MainCenterPlaylistContentPlaylistTrackTitle>
               <Styled.MainCenterPlaylistContentPlaylistTrackAuthor>
-                <Styled.MainCenterPlaylistContentPlaylistTrackAuthorLink href="http://">
+                <Styled.MainCenterPlaylistContentPlaylistTrackAuthorLink theme={theme} href="http://">
                   Nero
                 </Styled.MainCenterPlaylistContentPlaylistTrackAuthorLink>
               </Styled.MainCenterPlaylistContentPlaylistTrackAuthor>
@@ -78,14 +80,14 @@ export function BarDayPlaylist() {
                   </Styled.MainCenterPlaylistContentPlaylistTrackTitleSvg>
                 </Styled.MainCenterPlaylistContentPlaylistTrackTitleImage>
                 <div>
-                  <Styled.MainCenterPlaylistContentPlaylistTrackTitleLink href="http://">
+                  <Styled.MainCenterPlaylistContentPlaylistTrackTitleLink theme={theme} href="http://">
                     Elektro{' '}
                     <Styled.MainCenterPlaylistContentPlaylistTrackTitleSpan />
                   </Styled.MainCenterPlaylistContentPlaylistTrackTitleLink>
                 </div>
               </Styled.MainCenterPlaylistContentPlaylistTrackTitle>
               <Styled.MainCenterPlaylistContentPlaylistTrackAuthor>
-                <Styled.MainCenterPlaylistContentPlaylistTrackAuthorLink href="http://">
+                <Styled.MainCenterPlaylistContentPlaylistTrackAuthorLink theme={theme} href="http://">
                   Dynoro, Outwork, Mr. Gee
                 </Styled.MainCenterPlaylistContentPlaylistTrackAuthorLink>
               </Styled.MainCenterPlaylistContentPlaylistTrackAuthor>
@@ -114,14 +116,14 @@ export function BarDayPlaylist() {
                   </Styled.MainCenterPlaylistContentPlaylistTrackTitleSvg>
                 </Styled.MainCenterPlaylistContentPlaylistTrackTitleImage>
                 <div>
-                  <Styled.MainCenterPlaylistContentPlaylistTrackTitleLink href="http://">
+                  <Styled.MainCenterPlaylistContentPlaylistTrackTitleLink theme={theme} href="http://">
                     I’m Fire{' '}
                     <Styled.MainCenterPlaylistContentPlaylistTrackTitleSpan />
                   </Styled.MainCenterPlaylistContentPlaylistTrackTitleLink>
                 </div>
               </Styled.MainCenterPlaylistContentPlaylistTrackTitle>
               <Styled.MainCenterPlaylistContentPlaylistTrackAuthor>
-                <Styled.MainCenterPlaylistContentPlaylistTrackAuthorLink href="http://">
+                <Styled.MainCenterPlaylistContentPlaylistTrackAuthorLink theme={theme} href="http://">
                   Ali Bakgor
                 </Styled.MainCenterPlaylistContentPlaylistTrackAuthorLink>
               </Styled.MainCenterPlaylistContentPlaylistTrackAuthor>
@@ -150,7 +152,7 @@ export function BarDayPlaylist() {
                   </Styled.MainCenterPlaylistContentPlaylistTrackTitleSvg>
                 </Styled.MainCenterPlaylistContentPlaylistTrackTitleImage>
                 <div>
-                  <Styled.MainCenterPlaylistContentPlaylistTrackTitleLink href="http://">
+                  <Styled.MainCenterPlaylistContentPlaylistTrackTitleLink theme={theme} href="http://">
                     Non Stop{' '}
                     <Styled.MainCenterPlaylistContentPlaylistTrackTitleSpan>
                       (Remix)
@@ -159,7 +161,7 @@ export function BarDayPlaylist() {
                 </div>
               </Styled.MainCenterPlaylistContentPlaylistTrackTitle>
               <Styled.MainCenterPlaylistContentPlaylistTrackAuthor>
-                <Styled.MainCenterPlaylistContentPlaylistTrackAuthorLink href="http://">
+                <Styled.MainCenterPlaylistContentPlaylistTrackAuthorLink theme={theme} href="http://">
                   Стоункат, Psychopath
                 </Styled.MainCenterPlaylistContentPlaylistTrackAuthorLink>
               </Styled.MainCenterPlaylistContentPlaylistTrackAuthor>
@@ -188,7 +190,7 @@ export function BarDayPlaylist() {
                   </Styled.MainCenterPlaylistContentPlaylistTrackTitleSvg>
                 </Styled.MainCenterPlaylistContentPlaylistTrackTitleImage>
                 <div>
-                  <Styled.MainCenterPlaylistContentPlaylistTrackTitleLink href="http://">
+                  <Styled.MainCenterPlaylistContentPlaylistTrackTitleLink theme={theme} href="http://">
                     Run Run{' '}
                     <Styled.MainCenterPlaylistContentPlaylistTrackTitleSpan>
                       (feat. AR/CO)
@@ -197,7 +199,7 @@ export function BarDayPlaylist() {
                 </div>
               </Styled.MainCenterPlaylistContentPlaylistTrackTitle>
               <Styled.MainCenterPlaylistContentPlaylistTrackAuthor>
-                <Styled.MainCenterPlaylistContentPlaylistTrackAuthorLink href="http://">
+                <Styled.MainCenterPlaylistContentPlaylistTrackAuthorLink theme={theme} href="http://">
                   Jaded, Will Clarke, AR/CO
                 </Styled.MainCenterPlaylistContentPlaylistTrackAuthorLink>
               </Styled.MainCenterPlaylistContentPlaylistTrackAuthor>
@@ -226,7 +228,7 @@ export function BarDayPlaylist() {
                   </Styled.MainCenterPlaylistContentPlaylistTrackTitleSvg>
                 </Styled.MainCenterPlaylistContentPlaylistTrackTitleImage>
                 <div>
-                  <Styled.MainCenterPlaylistContentPlaylistTrackTitleLink href="http://">
+                  <Styled.MainCenterPlaylistContentPlaylistTrackTitleLink theme={theme} href="http://">
                     Eyes on Fire{' '}
                     <Styled.MainCenterPlaylistContentPlaylistTrackTitleSpan>
                       (Zeds Dead Remix)
@@ -235,7 +237,7 @@ export function BarDayPlaylist() {
                 </div>
               </Styled.MainCenterPlaylistContentPlaylistTrackTitle>
               <Styled.MainCenterPlaylistContentPlaylistTrackAuthor>
-                <Styled.MainCenterPlaylistContentPlaylistTrackAuthorLink href="http://">
+                <Styled.MainCenterPlaylistContentPlaylistTrackAuthorLink theme={theme} href="http://">
                   Blue Foundation, Zeds Dead
                 </Styled.MainCenterPlaylistContentPlaylistTrackAuthorLink>
               </Styled.MainCenterPlaylistContentPlaylistTrackAuthor>
@@ -264,7 +266,7 @@ export function BarDayPlaylist() {
                   </Styled.MainCenterPlaylistContentPlaylistTrackTitleSvg>
                 </Styled.MainCenterPlaylistContentPlaylistTrackTitleImage>
                 <div>
-                  <Styled.MainCenterPlaylistContentPlaylistTrackTitleLink href="http://">
+                  <Styled.MainCenterPlaylistContentPlaylistTrackTitleLink theme={theme} href="http://">
                     Mucho Bien{' '}
                     <Styled.MainCenterPlaylistContentPlaylistTrackTitleSpan>
                       (Hi Profile Remix)
@@ -273,7 +275,7 @@ export function BarDayPlaylist() {
                 </div>
               </Styled.MainCenterPlaylistContentPlaylistTrackTitle>
               <Styled.MainCenterPlaylistContentPlaylistTrackAuthor>
-                <Styled.MainCenterPlaylistContentPlaylistTrackAuthorLink href="http://">
+                <Styled.MainCenterPlaylistContentPlaylistTrackAuthorLink theme={theme} href="http://">
                   HYBIT, Mr. Black, Offer Nissim, Hi Profile
                 </Styled.MainCenterPlaylistContentPlaylistTrackAuthorLink>
               </Styled.MainCenterPlaylistContentPlaylistTrackAuthor>
@@ -302,14 +304,14 @@ export function BarDayPlaylist() {
                   </Styled.MainCenterPlaylistContentPlaylistTrackTitleSvg>
                 </Styled.MainCenterPlaylistContentPlaylistTrackTitleImage>
                 <div>
-                  <Styled.MainCenterPlaylistContentPlaylistTrackTitleLink href="http://">
+                  <Styled.MainCenterPlaylistContentPlaylistTrackTitleLink theme={theme} href="http://">
                     Knives n Cherries{' '}
                     <Styled.MainCenterPlaylistContentPlaylistTrackTitleSpan />
                   </Styled.MainCenterPlaylistContentPlaylistTrackTitleLink>
                 </div>
               </Styled.MainCenterPlaylistContentPlaylistTrackTitle>
               <Styled.MainCenterPlaylistContentPlaylistTrackAuthor>
-                <Styled.MainCenterPlaylistContentPlaylistTrackAuthorLink href="http://">
+                <Styled.MainCenterPlaylistContentPlaylistTrackAuthorLink theme={theme} href="http://">
                   minthaze
                 </Styled.MainCenterPlaylistContentPlaylistTrackAuthorLink>
               </Styled.MainCenterPlaylistContentPlaylistTrackAuthor>
@@ -338,19 +340,19 @@ export function BarDayPlaylist() {
                   </Styled.MainCenterPlaylistContentPlaylistTrackTitleSvg>
                 </Styled.MainCenterPlaylistContentPlaylistTrackTitleImage>
                 <div>
-                  <Styled.MainCenterPlaylistContentPlaylistTrackTitleLink href="http://">
+                  <Styled.MainCenterPlaylistContentPlaylistTrackTitleLink theme={theme} href="http://">
                     How Deep Is Your Love{' '}
                     <Styled.MainCenterPlaylistContentPlaylistTrackTitleSpan />
                   </Styled.MainCenterPlaylistContentPlaylistTrackTitleLink>
                 </div>
               </Styled.MainCenterPlaylistContentPlaylistTrackTitle>
               <Styled.MainCenterPlaylistContentPlaylistTrackAuthor>
-                <Styled.MainCenterPlaylistContentPlaylistTrackAuthorLink href="http://">
+                <Styled.MainCenterPlaylistContentPlaylistTrackAuthorLink theme={theme} href="http://">
                   Calvin Harris, Disciples
                 </Styled.MainCenterPlaylistContentPlaylistTrackAuthorLink>
               </Styled.MainCenterPlaylistContentPlaylistTrackAuthor>
               <Styled.MainCenterPlaylistContentPlaylistTrackAlbum>
-                <Styled.MainCenterPlaylistContentPlaylistTrackAlbumLink href="http://">
+                <Styled.MainCenterPlaylistContentPlaylistTrackAlbumLink theme={theme} href="http://">
                   How Deep Is Your Love
                 </Styled.MainCenterPlaylistContentPlaylistTrackAlbumLink>
               </Styled.MainCenterPlaylistContentPlaylistTrackAlbum>
@@ -374,14 +376,14 @@ export function BarDayPlaylist() {
                   </Styled.MainCenterPlaylistContentPlaylistTrackTitleSvg>
                 </Styled.MainCenterPlaylistContentPlaylistTrackTitleImage>
                 <div>
-                  <Styled.MainCenterPlaylistContentPlaylistTrackTitleLink href="http://">
+                  <Styled.MainCenterPlaylistContentPlaylistTrackTitleLink theme={theme} href="http://">
                     Morena{' '}
                     <Styled.MainCenterPlaylistContentPlaylistTrackTitleSpan />
                   </Styled.MainCenterPlaylistContentPlaylistTrackTitleLink>
                 </div>
               </Styled.MainCenterPlaylistContentPlaylistTrackTitle>
               <Styled.MainCenterPlaylistContentPlaylistTrackAuthor>
-                <Styled.MainCenterPlaylistContentPlaylistTrackAuthorLink href="http://">
+                <Styled.MainCenterPlaylistContentPlaylistTrackAuthorLink theme={theme} href="http://">
                   Tom Boxer
                 </Styled.MainCenterPlaylistContentPlaylistTrackAuthorLink>
               </Styled.MainCenterPlaylistContentPlaylistTrackAuthor>

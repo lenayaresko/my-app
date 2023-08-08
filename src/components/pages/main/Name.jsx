@@ -1,12 +1,20 @@
 import { Link } from 'react-router-dom'
 import * as Styled from '../../styles/stylesName'
+import { useThemeContext } from '../../styles/themes'
 
 function Name() {
+  const { theme } = useThemeContext()
   return (
-    <Styled.MainSidebar>
+    <Styled.MainSidebar theme={theme}>
       <Styled.SidebarPersonal>
-        <Styled.SidebarPersonalName>Sergey.Ivanov</Styled.SidebarPersonalName>
-        <Styled.SidebarAvatar />
+        <Styled.SidebarPersonalName theme={theme}>
+          Sergey.Ivanov
+        </Styled.SidebarPersonalName>
+        <Link to="/login">
+          <Styled.SidebarAvatar>
+            <use xlinkHref={theme.accountIcon} />
+          </Styled.SidebarAvatar>
+        </Link>
       </Styled.SidebarPersonal>
       <Styled.SidebarBlock>
         <Styled.SidebarList>

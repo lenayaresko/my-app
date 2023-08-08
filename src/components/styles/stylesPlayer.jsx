@@ -9,7 +9,7 @@ export const PlayerBar = styled.div`
   bottom: 0;
   left: 0;
   width: 100%;
-  background: rgba(28, 28, 28, 0.5);
+  background: ${(props) => props.theme.background};
 `
 
 export const PlayerBarContent = styled.div`
@@ -182,7 +182,7 @@ export const PlayerTrackPlayContain = styled.div`
 export const PlayerTrackPlayImage = styled.div`
   width: 51px;
   height: 51px;
-  background-color: #313131;
+  background-color: ${(props) => props.theme.trackIconBg};
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -218,7 +218,7 @@ export const PlayerTrackPlayAuthorLink = styled.a`
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
-  color: #ffffff;
+  color: ${(props) => props.theme.color};
   white-space: nowrap;
 `
 
@@ -234,7 +234,7 @@ export const PlayerTrackPlayAlbumLink = styled.a`
   font-weight: 400;
   font-size: 13px;
   line-height: 24px;
-  color: #ffffff;
+  color: ${(props) => props.theme.color};
 `
 
 export const PlayerTrackPlayLikeDis = styled.div`

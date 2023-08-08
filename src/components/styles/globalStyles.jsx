@@ -51,6 +51,8 @@ export const Main = styled.main`
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  background-color: ${(props) => props.theme.background};
+  color: ${(props) => props.theme.color};
 `
 
 export const Container = styled.div`
@@ -58,7 +60,7 @@ export const Container = styled.div`
   height: 100vh;
   margin: 0 auto;
   position: relative;
-  background-color: #181818;
+  background-color: ${(props) => props.theme.background};
 `
 
 export const Bar = styled.div`
@@ -66,7 +68,7 @@ export const Bar = styled.div`
   bottom: 0;
   left: 0;
   width: 100%;
-  background: rgba(28, 28, 28, 0.5);
+  background: ${(props) => props.theme.background};
 `
 
 export default GlobalStyle
