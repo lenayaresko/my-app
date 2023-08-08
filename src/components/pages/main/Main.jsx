@@ -24,7 +24,7 @@ export function PageLogged() {
 
   return (
     <Styled.Container theme={theme} id="root">
-      <Styled.Main style={{ backgroundColor: theme.background, color: theme }}>
+      <Styled.Main theme={theme}>
         <Styled.GlobalStyle />
         <Menu />
         <Bar />

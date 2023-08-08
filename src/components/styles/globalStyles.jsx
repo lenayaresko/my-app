@@ -51,6 +51,8 @@ export const Main = styled.main`
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  background-color: ${(props) => props.theme.background};
+  color: ${(props) => props.theme.color};
 `
 
 export const Container = styled.div`

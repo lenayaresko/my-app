@@ -10,9 +10,11 @@ function Name() {
         <Styled.SidebarPersonalName theme={theme}>
           Sergey.Ivanov
         </Styled.SidebarPersonalName>
-        <Styled.SidebarAvatar>
-          <use xlinkHref={theme.accountIcon} />
-        </Styled.SidebarAvatar>
+        <Link to="/login">
+          <Styled.SidebarAvatar>
+            <use xlinkHref={theme.accountIcon} />
+          </Styled.SidebarAvatar>
+        </Link>
       </Styled.SidebarPersonal>
       <Styled.SidebarBlock>
         <Styled.SidebarList>
